@@ -31,6 +31,7 @@ if [ ! -d $project_gh_directory ]; then
 fi
 
 if [ ! -d $project_gh_path ]; then
+	cd $project_gh_directory
 	echo "$project_clone_url" | xargs git clone
 fi
 

@@ -1,0 +1,134 @@
+{
+	"gitbook": "3.2.3",
+	"title": "我的 kubernetes 学习手册电子书",
+	"description": "总结和分享我在使用 kubernetes 中积累的经验与遇到的问题",
+	"author": "Mars丶小石头 <bjddd192@163.com>",
+	"language": "zh-hans",
+	"isbn": "",
+	"plugins": [
+		"highlight",
+		"-search",
+		"-sharing",
+		"fontsettings",
+		"-livereload",
+		"-lunr",
+		"search-pro-kui",
+		"-sharing-plus",
+		"-github",
+		"donate",
+		"splitter",
+		"anchor-navigation-ex",
+		"prism",
+		"-disqus",
+		"tbfed-pagefooter",
+		"favicon",
+		"-rss",
+		"expandable-chapters"
+	],
+	"pluginsConfig": {
+		"sharing": {
+			"douban": false,
+			"facebook": false,
+			"google": false,
+			"hatenaBookmark": false,
+			"instapaper": false,
+			"line": false,
+			"linkedin": false,
+			"messenger": false,
+			"pocket": false,
+			"qq": false,
+			"qzone": false,
+			"stumbleupon": false,
+			"twitter": false,
+			"viber": false,
+			"vk": false,
+			"weibo": false,
+			"whatsapp": false,
+			"all": [
+				"douban",
+				"facebook",
+				"google",
+				"hatenaBookmark",
+				"instapaper",
+				"line",
+				"linkedin",
+				"messenger",
+				"pocket",
+				"qq",
+				"qzone",
+				"stumbleupon",
+				"twitter",
+				"viber",
+				"vk",
+				"weibo",
+				"whatsapp"
+			]
+		},
+		"github": {
+			"url": "https://github.com/bjddd192"
+		},
+		"donate": {
+			"wechat": "/images/微信收钱码.jpeg",
+			"alipay": "/images/支付宝收钱码.jpeg",
+			"title": "",
+			"button": "赞赏",
+			"wechatText": "微信赞赏",
+			"alipayText": "支付宝赞赏"
+		},
+		"anchor-navigation-ex": {
+			"showLevel": true,
+			"associatedWithSummary": false,
+			"printLog": false,
+			"multipleH1": false,
+			"mode": "float",
+			"showGoTop": true,
+			"float": {
+				"showLevelIcon": false,
+				"level1Icon": "fa fa-hand-o-right",
+				"level2Icon": "fa fa-hand-o-right",
+				"level3Icon": "fa fa-hand-o-right"
+			},
+			"pageTop": {
+				"showLevelIcon": false,
+				"level1Icon": "fa fa-hand-o-right",
+				"level2Icon": "fa fa-hand-o-right",
+				"level3Icon": "fa fa-hand-o-right"
+			}
+		},
+		"theme-default": {
+			"showLevel": false
+		},
+		"fontsettings": {
+			"size": 2
+		},
+		"prism": {
+			"css": [
+				"prismjs/themes/prism-tomorrow.css"
+			]
+		},
+		"disqus": {
+			"shortName": "http-localhost-4000-16"
+		},
+		"tbfed-pagefooter": {
+			"copyright": "Copyright © Mars丶小石头 2018",
+			"modify_label": "该文件修订时间：",
+			"modify_format": "YYYY-MM-DD HH:mm:ss"
+		},
+		"favicon": {
+			"shortcut": "favicon.ico",
+			"bookmark": "favicon.ico"
+		},
+		"rss": {
+			"title": "我的 kubernetes 学习手册电子书",
+			"description": "总结和分享我在使用 kubernetes 中积累的经验与遇到的问题",
+			"author": "Mars丶小石头 <bjddd192@163.com>",
+			"feed_url": "http://gitbook.bjddd192.com/rss",
+			"site_url": "http://gitbook.bjddd912.com/",
+			"managingEditor": "bjddd192@163.com",
+			"webMaster": "bjddd192@163.com",
+			"categories": [
+				"gitbook"
+			]
+		}
+	}
+}

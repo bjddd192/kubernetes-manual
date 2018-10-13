@@ -25,7 +25,7 @@ chsh -s /bin/rbash k8sloger
 bash -c 'echo "export PATH=/home/k8sloger/" >> /home/k8sloger/.bashrc'
 ```
 
-## 赋予日志最基本的权限
+## 赋予日志用户最基本的权限
 
 ```sh
 ln -s /bin/ping /home/k8sloger/ping
@@ -95,7 +95,7 @@ chmod +x /home/k8sloger/getlog
 
 ## 应用方法
 
-使用 k8sloger 用户 ssh 登陆到服务器(这里建议开发使用 webssh 登陆)，然后执行 `getlog` 命令根据提示进行操作，即可看到实时日志了。
+使用 `k8sloger` 用户 ssh 登陆到服务器(这里建议开发使用 webssh 登陆)，然后执行 `getlog` 命令根据提示进行操作，即可看到实时日志了。
 
 ## 参考资料
 

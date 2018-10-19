@@ -18,6 +18,10 @@ Pod 是 K8s 集群中所有业务类型的基础，可以看作运行在 K8s 集
 
 RC 是 K8s 集群中最早的保证 Pod 高可用的 API 对象。通过监控运行中的 Pod 来保证集群中运行指定数目的 Pod 副本。指定的数目可以是多个也可以是 1 个；少于指定数目，RC 就会启动运行新的 Pod 副本；多于指定数目，RC 就会杀死多余的 Pod 副本。即使在指定数目为 1 的情况下，通过 RC 运行 Pod 也比直接运行 Pod 更明智，因为 RC 也可以发挥它高可用的能力，保证永远有 1 个 Pod 在运行。RC 是 K8s 较早期的技术概念，只适用于长期伺服型的业务类型，比如提供高可用的 Web 服务。
 
+Replication Controller 只会对那些 RestartPolicy=Always 的 Pod 的生效。
+
+Replication Controller 只支持基于等式的 selector（env=dev 或 environment!=qa）
+
 ### 副本集（Replica Set，RS）
 
 RS 是新一代 RC，提供同样的高可用能力，区别主要在于 RS 后来居上，能支持更多种类的匹配模式。副本集对象一般不单独使用，而是作为 Deployment 的理想状态参数使用。

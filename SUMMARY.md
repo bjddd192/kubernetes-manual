@@ -7,7 +7,9 @@
         * [kubernetes Namespace](basic/namespace.md)
         * [kubernetes Node](basic/node.md)
         * [kubernetes Service](basic/service.md)
+        * [kubernetes Volume](basic/volume.md)
     * 集群搭建
+        * [部署架构](install/deployment_architecture.md)
         * kubeadm 方式
         * 二进制方式
         * [ansible 方式](install/ansible.md)
@@ -16,8 +18,18 @@
         * [kubectl](manage/kubectl.md)
     * 服务编排
         * [常用标签](compose/common_label.md)
+        * [Deployment](compose/Deployment.md)
+        * [Secret](compose/Secret.md)
+        * [Statefulset](compose/Statefulset.md)
+        * [DaemonSet](compose/DaemonSet.md)
+        * [ServiceAccount](compose/ServiceAccount.md)
+        * [CronJob](compose/CronJob.md)
+        * [Job](compose/Job.md)
+        * [ConfigMap](compose/ConfigMap.md)
+        * [Ingress](compose/Ingress.md)
     * 日志管理
         * [日志归集(EFK)](log_manager/efk.md)
         * [实时日志处理](log_manager/real_time_log.md)
     * [版本使用记录](version.md)
+    * [技术选型](technology_selection.md)
 

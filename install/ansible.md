@@ -7,3 +7,7 @@
 这个项目来源于 github 上的一个优秀的开源项目 [kubeasz](https://github.com/gjmzj/kubeasz)，需要的朋友可以去 fork 后自己进行定制化处理。
 
 **需要有 ansible 和 linux 基础才能玩转此项目。**
+
+其他项目也可以参考下：
+
+[kube-ansible](https://github.com/kairen/kube-ansible) 来自台湾的一名工程师

@@ -27,9 +27,12 @@
         * [Job](compose/Job.md)
         * [ConfigMap](compose/ConfigMap.md)
         * [Ingress](compose/Ingress.md)
+    * 镜像仓库
+        * [harbor](registry/harbor.md)
     * 日志管理
         * [日志归集(EFK)](log_manager/efk.md)
         * [实时日志处理](log_manager/real_time_log.md)
     * [版本使用记录](version_record.md)
     * [技术选型](technology_selection.md)
+    * [问题记录](qa.md)
 

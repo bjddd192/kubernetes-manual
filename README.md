@@ -30,3 +30,6 @@ Kubernetes 项目来源于 Borg，可以说是集结了 Borg 设计思想的精�
 
 Kubernetes 作为容器集群管理工具，于 2015 年 7 月 22 日迭代到 v1.0 并正式对外公布，这意味着这个开源容器编排系统可以正式在生产环境使用。与此同时，谷歌联合 Linux 基金会及其他合作伙伴共同成立了 CNCF 基金会(Cloud Native Computing Foundation)，并将 Kuberentes 作为首个编入 CNCF 管理体系的开源项目，助力容器技术生态的发展进步。Kubernetes 项目凝结了 Google 过去十年间在生产环境的经验和教训，从 Borg 的多任务分配资源块到 Kubernetes 的多副本 Pod，从 Borg 的 Cell 集群管理，到 Kubernetes 设计理念中的联邦集群，在 Docker 等高级引擎带动容器技术兴起和大众化的同时，为容器集群管理提供独了到见解和新思路。
 
+## 参考资料
+
+[服务网格实践手册](https://jimmysong.io/istio-handbook/)

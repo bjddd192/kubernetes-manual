@@ -43,3 +43,24 @@
 ## 微服务架构
 
 [微服务架构最佳实践课堂PPT- 微服务容器化的挑战和解决之道](http://www.youruncloud.com/blog/66.html)
+
+## Kubernetes和OpenStack到底是什么关系？先搞清楚，再系列学习
+
+Kubernetes 面向应用层，变革的是业务架构，而 OpenStack 面向资源层，改变的是资源供给模式。使用容器且集群规模不大，直接用 Kubenetes 就可以；集群规模大，不管应用是否只是跑在容器中，都是 OpenStack + Kubernetes 更好。
+OpenStack + Kubernetes 是各取所长，并不只是因为惯性，而是对于多租户需求来说，Container（容器）的隔离性还需要加强，需要加一层 VM（虚拟机） 来弥补，而 OpenStack 是很好的方案。不过，VM + Container 的模式，必然有性能的损耗，所以 OpenStack 基金会也推出一个项目叫 Kata Containers，希望减少虚拟化的开销，兼顾容器的性能和隔离性。
+
+永恒的只有变化，未来的业务都会运行在云上，容器是走向 DevOps、Cloud Native（云原生）的标准工具，已经开始走向平凡，而 Kubernetes 的编排能力，让容器能够落地到业务应用中，所以我们看到 Docker、Mesos、OpenStack 以及很多公有云、私有云服务商，都在支持 Kubernetes，大家都加入了 CNCF（云原生计算基金会）。
+
+总结起来，OpenStack 是兼容传统的架构，而 Kubernetes 是面向未来的架构。
+
+![image](https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1517309696705&di=2f594f3d541a02b20dcc3a48d3d3c2fd&imgtype=0&src=http%3A%2F%2Fstatic.open-open.com%2Fnews%2FuploadImg%2F20150618%2F20150618111734_7.png)
+
+最后，计算开源云这几年发展很快，从这个问题提出到现在，社区又有了很多变化。所以要修正一个观点：Kubernetes 支持的容器运行时不仅仅是 Docker，也包括 Rkt，当然 Docker 更加流行。
+
+简单的说，kubernetes是管理container的工具，openstack是管理VM的工具。
+
+container可以运行在物理机上，也可以运行在VM上。所以kubernetes不是需要openstack的支持。但对于云计算来说，很多IasS都通过openstack来管理虚拟机。然后用户可以在这些虚拟机上运行docker，可以通过kubernetes进行管理。
+
+不过kubernetes虽然是开源的，但它毕竟是为GCE服务的，Google其实并没有多少动力去支持其他平台的。
+
+[京东从OpenStack改用Kubernetes的始末](https://tutorials.hostucan.cn/jd-openstack-kubernetes)

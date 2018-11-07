@@ -8,6 +8,8 @@
         * [kubernetes Node](basic/node.md)
         * [kubernetes Service](basic/service.md)
         * [kubernetes Volume](basic/volume.md)
+    * 网络知识
+        * [dns](network/dns.md)
     * 集群搭建
         * [部署架构](install/deployment_architecture.md)
         * kubeadm 方式

@@ -10,14 +10,17 @@
         * [kubernetes Volume](basic/volume.md)
     * 网络知识
         * [dns](network/dns.md)
+        * [calico](network/calico.md)
     * 集群搭建
         * [部署架构](install/deployment_architecture.md)
         * kubeadm 方式
         * 二进制方式
         * [ansible 方式](install/ansible.md)
+        * [rancher](install/rancher.md)
         * 界面方式(期待中)
     * 集群管理
         * [kubectl](manage/kubectl.md)
+        * [rbac](manage/rbac.md)
     * 服务编排
         * [常用标签](compose/common_label.md)
         * [Deployment](compose/Deployment.md)
@@ -34,6 +37,8 @@
     * 日志管理
         * [日志归集(EFK)](log_manager/efk.md)
         * [实时日志处理](log_manager/real_time_log.md)
+    * 未整理
+        * [helm学习](temp/helm.md)
     * [版本使用记录](version_record.md)
     * [技术选型](technology_selection.md)
     * [问题记录](qa.md)

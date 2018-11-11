@@ -33,3 +33,7 @@ Kubernetes 作为容器集群管理工具，于 2015 年 7 月 22 日迭代到 v
 ## 参考资料
 
 [服务网格实践手册](https://jimmysong.io/istio-handbook/)
+
+[Kubernetes Handbook——Kubernetes中文指南/云原生应用架构实践手册](https://jimmysong.io/kubernetes-handbook/)
+
+[生产级别的容器编排系统](https://k8smeetup.github.io/)

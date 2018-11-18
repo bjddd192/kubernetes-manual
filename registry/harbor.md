@@ -96,6 +96,9 @@ curl -u "scm:n7izpoc6N2" -X GET -H "Content-Type: application/json" "http://hub.
 Q：管理员登录后没有管理员的操作权限？
 A：清除浏览器缓存。
 
+Q：仓库同步报错：hub.wonhigh.cn: no such host
+A：需要处理 docker-compose.yml 文件，增加对 jobservice 服务的 extra_hosts 参数。
+
 ## 参考资料
 
 [VMware Harbor 学习](https://www.cnblogs.com/biglittleant/p/7283738.html)
@@ -119,3 +122,5 @@ A：清除浏览器缓存。
 [Harbor Registry Garbage Collect(垃圾回收)](http://www.itboth.com/d/u367vz/docker)
 
 [docker-maven-plugin 完全免 Dockerfile 文件](https://www.cnblogs.com/atliwen/p/6101946.html)
+
+[Docker镜像仓库Harbor主从镜像同步](https://blog.csdn.net/hiyun9/article/details/79655385)

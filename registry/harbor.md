@@ -36,7 +36,7 @@ tar zxvf harbor-offline-installer-v1.6.1.tgz
 cd harbor
 # 修改配置
 # 启动 harbor
-./install.sh
+sh /data/harbor/install.sh --with-clair --with-chartmuseum
 
 docker-compose -f ./docker-compose.yml -f ./docker-compose.clair.yml -f ./docker-compose.chartmuseum.yml down -v
 docker-compose -f ./docker-compose.yml -f ./docker-compose.clair.yml -f ./docker-compose.chartmuseum.yml up -d

@@ -1,0 +1,943 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>harbor · 我的 kubernetes 学习手册电子书</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Mars丶小石头 <bjddd192@163.com>">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro-kui/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    我的 kubernetes 学习手册
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" >
+            
+                <span>
+            
+                    
+                    基础知识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.1" data-path="../basic/architecture.html">
+            
+                <a href="../basic/architecture.html">
+            
+                    
+                    kubernetes 体系结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2" data-path="../basic/api.html">
+            
+                <a href="../basic/api.html">
+            
+                    
+                    kubernetes API 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3" data-path="../basic/namespace.html">
+            
+                <a href="../basic/namespace.html">
+            
+                    
+                    kubernetes Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.4" data-path="../basic/node.html">
+            
+                <a href="../basic/node.html">
+            
+                    
+                    kubernetes Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.5" data-path="../basic/service.html">
+            
+                <a href="../basic/service.html">
+            
+                    
+                    kubernetes Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6" data-path="../basic/volume.html">
+            
+                <a href="../basic/volume.html">
+            
+                    
+                    kubernetes Volume
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" >
+            
+                <span>
+            
+                    
+                    网络知识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.2.1" data-path="../network/dns.html">
+            
+                <a href="../network/dns.html">
+            
+                    
+                    dns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.2" data-path="../network/calico.html">
+            
+                <a href="../network/calico.html">
+            
+                    
+                    calico
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" >
+            
+                <span>
+            
+                    
+                    集群搭建
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.3.1" data-path="../install/deployment_architecture.html">
+            
+                <a href="../install/deployment_architecture.html">
+            
+                    
+                    部署架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.2" >
+            
+                <span>
+            
+                    
+                    kubeadm 方式
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.3" >
+            
+                <span>
+            
+                    
+                    二进制方式
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.4" data-path="../install/ansible.html">
+            
+                <a href="../install/ansible.html">
+            
+                    
+                    ansible 方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.5" data-path="../install/rancher.html">
+            
+                <a href="../install/rancher.html">
+            
+                    
+                    rancher
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.6" >
+            
+                <span>
+            
+                    
+                    界面方式(期待中)
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" >
+            
+                <span>
+            
+                    
+                    集群管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.4.1" data-path="../manage/kubectl.html">
+            
+                <a href="../manage/kubectl.html">
+            
+                    
+                    kubectl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.2" data-path="../manage/rbac.html">
+            
+                <a href="../manage/rbac.html">
+            
+                    
+                    rbac
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" >
+            
+                <span>
+            
+                    
+                    服务编排
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.5.1" data-path="../compose/common_label.html">
+            
+                <a href="../compose/common_label.html">
+            
+                    
+                    常用标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.2" data-path="../compose/Deployment.html">
+            
+                <a href="../compose/Deployment.html">
+            
+                    
+                    Deployment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.3" data-path="../compose/Secret.html">
+            
+                <a href="../compose/Secret.html">
+            
+                    
+                    Secret
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.4" data-path="../compose/Statefulset.html">
+            
+                <a href="../compose/Statefulset.html">
+            
+                    
+                    Statefulset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.5" data-path="../compose/DaemonSet.html">
+            
+                <a href="../compose/DaemonSet.html">
+            
+                    
+                    DaemonSet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.6" data-path="../compose/ServiceAccount.html">
+            
+                <a href="../compose/ServiceAccount.html">
+            
+                    
+                    ServiceAccount
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.7" data-path="../compose/CronJob.html">
+            
+                <a href="../compose/CronJob.html">
+            
+                    
+                    CronJob
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.8" data-path="../compose/Job.html">
+            
+                <a href="../compose/Job.html">
+            
+                    
+                    Job
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.9" data-path="../compose/ConfigMap.html">
+            
+                <a href="../compose/ConfigMap.html">
+            
+                    
+                    ConfigMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.10" data-path="../compose/Ingress.html">
+            
+                <a href="../compose/Ingress.html">
+            
+                    
+                    Ingress
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" >
+            
+                <span>
+            
+                    
+                    镜像仓库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.1.6.1" data-path="harbor.html">
+            
+                <a href="harbor.html">
+            
+                    
+                    harbor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" >
+            
+                <span>
+            
+                    
+                    日志管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.7.1" data-path="../log_manager/efk.html">
+            
+                <a href="../log_manager/efk.html">
+            
+                    
+                    日志归集(EFK)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7.2" data-path="../log_manager/real_time_log.html">
+            
+                <a href="../log_manager/real_time_log.html">
+            
+                    
+                    实时日志处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" >
+            
+                <span>
+            
+                    
+                    未整理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.8.1" data-path="../temp/helm.html">
+            
+                <a href="../temp/helm.html">
+            
+                    
+                    helm学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" data-path="../version_record.html">
+            
+                <a href="../version_record.html">
+            
+                    
+                    版本使用记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" data-path="../technology_selection.html">
+            
+                <a href="../technology_selection.html">
+            
+                    
+                    技术选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.11" data-path="../qa.html">
+            
+                <a href="../qa.html">
+            
+                    
+                    问题记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >harbor</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#harbor"><b> </b>harbor</a></li><ul><li><span class="title-icon "></span><a href="#&#x7279;&#x6027;"><b>1. </b>&#x7279;&#x6027;</a></li><li><span class="title-icon "></span><a href="#&#x5B89;&#x88C5;&#x6B65;&#x9AA4;"><b>2. </b>&#x5B89;&#x88C5;&#x6B65;&#x9AA4;</a></li><li><span class="title-icon "></span><a href="#&#x6743;&#x9650;&#x7BA1;&#x7406;"><b>3. </b>&#x6743;&#x9650;&#x7BA1;&#x7406;</a></li><li><span class="title-icon "></span><a href="#&#x955C;&#x50CF;&#x56DE;&#x6536;"><b>4. </b>&#x955C;&#x50CF;&#x56DE;&#x6536;</a></li><li><span class="title-icon "></span><a href="#harbor-api"><b>5. </b>Harbor API</a></li><li><span class="title-icon "></span><a href="#&#x95EE;&#x9898;"><b>6. </b>&#x95EE;&#x9898;</a></li><li><span class="title-icon "></span><a href="#&#x53C2;&#x8003;&#x8D44;&#x6599;"><b>7. </b>&#x53C2;&#x8003;&#x8D44;&#x6599;</a></li></ul></ul></div><a href="#harbor" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="harbor"><a name="harbor" class="anchor-navigation-ex-anchor" href="#harbor"><i class="fa fa-link" aria-hidden="true"></i></a> harbor</h1>
+<p>Harbor &#x662F;&#x4E00;&#x4E2A;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x548C;&#x5206;&#x53D1; Docker &#x955C;&#x50CF;&#x7684;&#x4F01;&#x4E1A;&#x7EA7; Registry &#x670D;&#x52A1;&#x5668;&#xFF0C;&#x901A;&#x8FC7;&#x6DFB;&#x52A0;&#x4E00;&#x4E9B;&#x4F01;&#x4E1A;&#x5FC5;&#x9700;&#x7684;&#x529F;&#x80FD;&#x7279;&#x6027;&#xFF0C;&#x4F8B;&#x5982;&#x5B89;&#x5168;&#x3001;&#x6807;&#x8BC6;&#x548C;&#x7BA1;&#x7406;&#x7B49;&#xFF0C;&#x6269;&#x5C55;&#x4E86;&#x5F00;&#x6E90; Docker Distribution&#x3002;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x4F01;&#x4E1A;&#x7EA7;&#x79C1;&#x6709; Registry &#x670D;&#x52A1;&#x5668;&#xFF0C;Harbor &#x63D0;&#x4F9B;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#x548C;&#x5B89;&#x5168;&#x3002;&#x63D0;&#x5347;&#x7528;&#x6237;&#x4F7F;&#x7528; Registry &#x6784;&#x5EFA;&#x548C;&#x8FD0;&#x884C;&#x73AF;&#x5883;&#x4F20;&#x8F93;&#x955C;&#x50CF;&#x7684;&#x6548;&#x7387;&#x3002;Harbor &#x652F;&#x6301;&#x5B89;&#x88C5;&#x5728;&#x591A;&#x4E2A; Registry &#x8282;&#x70B9;&#x7684;&#x955C;&#x50CF;&#x8D44;&#x6E90;&#x590D;&#x5236;&#xFF0C;&#x955C;&#x50CF;&#x5168;&#x90E8;&#x4FDD;&#x5B58;&#x5728;&#x79C1;&#x6709; Registry &#x4E2D;&#xFF0C; &#x786E;&#x4FDD;&#x6570;&#x636E;&#x548C;&#x77E5;&#x8BC6;&#x4EA7;&#x6743;&#x5728;&#x516C;&#x53F8;&#x5185;&#x90E8;&#x7F51;&#x7EDC;&#x4E2D;&#x7BA1;&#x63A7;&#x3002;&#x53E6;&#x5916;&#xFF0C;Harbor &#x4E5F;&#x63D0;&#x4F9B;&#x4E86;&#x9AD8;&#x7EA7;&#x7684;&#x5B89;&#x5168;&#x7279;&#x6027;&#xFF0C;&#x8BF8;&#x5982;&#x7528;&#x6237;&#x7BA1;&#x7406;&#xFF0C;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#x548C;&#x6D3B;&#x52A8;&#x5BA1;&#x8BA1;&#x7B49;&#x3002;</p>
+<p><a href="https://github.com/goharbor/harbor" target="_blank">Harbor &#x5B98;&#x7F51;</a></p>
+<p><a href="https://github.com/vmware/harbor/releases" target="_blank">Harbor release</a></p>
+<p><a href="https://github.com/goharbor/harbor/blob/master/docs/user_guide.md" target="_blank">&#x7528;&#x6237;&#x6307;&#x5357;</a></p>
+<p><a href="https://github.com/goharbor/harbor/blob/master/docs/installation_guide.md" target="_blank">Installation &amp; Configuration Guide</a></p>
+<p><a href="https://github.com/goharbor/harbor-helm" target="_blank">Harbor on Kubernetes with Harbor chart</a></p>
+<p><a href="https://github.com/goharbor/harbor/blob/master/docs/configure_https.md" target="_blank">Configuring Harbor with HTTPS Access</a></p>
+<h2 id="&#x7279;&#x6027;"><a name="&#x7279;&#x6027;" class="anchor-navigation-ex-anchor" href="#&#x7279;&#x6027;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x7279;&#x6027;</h2>
+<ul>
+<li>&#x4E91;&#x539F;&#x751F;&#x4ED3;&#x5E93;&#xFF1A;&#x652F;&#x6301;&#x5BB9;&#x5668;&#x955C;&#x50CF;&#x548C; Helm charts</li>
+<li>&#x57FA;&#x4E8E;&#x89D2;&#x8272;&#x7684;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#xFF1A;&#x7528;&#x6237;&#x4E0E;Docker&#x955C;&#x50CF;&#x4ED3;&#x5E93;&#x901A;&#x8FC7;&#x201C;&#x9879;&#x76EE;&#x201D;&#x8FDB;&#x884C;&#x7EC4;&#x7EC7;&#x7BA1;&#x7406;&#xFF0C;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5BF9;&#x591A;&#x4E2A;&#x955C;&#x50CF;&#x4ED3;&#x5E93;&#x5728;&#x540C;&#x4E00;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#xFF08;project&#xFF09;&#x91CC;&#x6709;&#x4E0D;&#x540C;&#x7684;&#x6743;&#x9650;&#x3002;</li>
+<li>&#x57FA;&#x4E8E;&#x7B56;&#x7565;&#x7684;&#x955C;&#x50CF;&#x590D;&#x5236;&#xFF1A;&#x53EF;&#x4EE5;&#x57FA;&#x4E8E;&#x5177;&#x6709;&#x591A;&#x4E2A;&#x8FC7;&#x6EE4;&#x5668;&#x7684;&#x7B56;&#x7565;&#x5728;&#x591A;&#x4E2A;&#x4ED3;&#x5E93;&#x5B9E;&#x4F8B;&#x4E4B;&#x95F4;&#x590D;&#x5236;&#xFF08;&#x540C;&#x6B65;&#xFF09;&#x955C;&#x50CF;&#x3002;&#x5982;&#x679C;&#x9047;&#x5230;&#x4EFB;&#x4F55;&#x9519;&#x8BEF;&#xFF0C;Harbor &#x5C06;&#x81EA;&#x52A8;&#x91CD;&#x8BD5;&#x8FDB;&#x884C;&#x590D;&#x5236;&#x3002;&#x975E;&#x5E38;&#x9002;&#x5408;&#x8D1F;&#x8F7D;&#x5E73;&#x8861;&#xFF0C;&#x9AD8;&#x53EF;&#x7528;&#x6027;&#xFF0C;&#x591A;&#x6570;&#x636E;&#x4E2D;&#x5FC3;&#xFF0C;&#x6DF7;&#x5408;&#x548C;&#x591A;&#x4E91;&#x573A;&#x666F;&#x3002;</li>
+<li>&#x6F0F;&#x6D1E;&#x626B;&#x63CF;&#xFF1A;Harbor &#x5B9A;&#x671F;&#x626B;&#x63CF;&#x955C;&#x50CF;&#x5E76;&#x8B66;&#x544A;&#x7528;&#x6237;&#x6F0F;&#x6D1E;&#x3002;</li>
+<li>&#x56FE;&#x5F62;&#x5316;&#x7528;&#x6237;&#x754C;&#x9762;&#xFF1A;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x6D4F;&#x89C8;&#x5668;&#x6765;&#x6D4F;&#x89C8;&#xFF0C;&#x68C0;&#x7D22;&#x5F53;&#x524D;Docker&#x955C;&#x50CF;&#x4ED3;&#x5E93;&#xFF0C;&#x7BA1;&#x7406;&#x9879;&#x76EE;&#x548C;&#x547D;&#x540D;&#x7A7A;&#x95F4;&#x3002;</li>
+<li>LDAP/AD &#x652F;&#x6301;&#xFF1A;Harbor&#x53EF;&#x4EE5;&#x96C6;&#x6210;&#x4F01;&#x4E1A;&#x5185;&#x90E8;&#x5DF2;&#x6709;&#x7684;AD/LDAP&#xFF0C;&#x7528;&#x4E8E;&#x9274;&#x6743;&#x8BA4;&#x8BC1;&#x7BA1;&#x7406;&#x3002;</li>
+<li>&#x56FD;&#x9645;&#x5316;&#xFF1A;&#x5DF2;&#x62E5;&#x6709;&#x82F1;&#x6587;&#x3001;&#x4E2D;&#x6587;&#x3001;&#x5FB7;&#x6587;&#x3001;&#x65E5;&#x6587;&#x548C;&#x4FC4;&#x6587;&#x7684;&#x672C;&#x5730;&#x5316;&#x7248;&#x672C;&#x3002;&#x66F4;&#x591A;&#x7684;&#x8BED;&#x8A00;&#x5C06;&#x4F1A;&#x6DFB;&#x52A0;&#x8FDB;&#x6765;&#x3002;</li>
+<li>&#x955C;&#x50CF;&#x5220;&#x9664;&#x548C;&#x5783;&#x573E;&#x6536;&#x96C6;&#xFF1A;&#x53EF;&#x4EE5;&#x5220;&#x9664;&#x955C;&#x50CF;&#xFF0C;&#x5E76;&#x53EF;&#x4EE5;&#x56DE;&#x6536;&#x5B83;&#x4EEC;&#x7684;&#x7A7A;&#x95F4;&#x3002;</li>
+<li>RESTful API&#xFF1A;&#x9002;&#x7528;&#x4E8E;&#x5927;&#x591A;&#x6570;&#x7BA1;&#x7406;&#x64CD;&#x4F5C;&#x7684; RESTful API&#xFF0C;&#x6613;&#x4E8E;&#x4E0E;&#x5916;&#x90E8;&#x7CFB;&#x7EDF;&#x96C6;&#x6210;&#x3002;</li>
+<li>&#x6613;&#x4E8E;&#x90E8;&#x7F72;&#xFF1A;&#x63D0;&#x4F9B;&#x5728;&#x7EBF;&#x548C;&#x79BB;&#x7EBF;&#x4E24;&#x79CD;&#x5B89;&#x88C5;&#x5DE5;&#x5177;&#xFF0C; &#x4E5F;&#x53EF;&#x4EE5;&#x5B89;&#x88C5;&#x5230;vSphere&#x5E73;&#x53F0;(OVA&#x65B9;&#x5F0F;)&#x865A;&#x62DF;&#x8BBE;&#x5907;&#x3002;</li>
+</ul>
+<h2 id="&#x5B89;&#x88C5;&#x6B65;&#x9AA4;"><a name="&#x5B89;&#x88C5;&#x6B65;&#x9AA4;" class="anchor-navigation-ex-anchor" href="#&#x5B89;&#x88C5;&#x6B65;&#x9AA4;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x5B89;&#x88C5;&#x6B65;&#x9AA4;</h2>
+<pre class="language-"><code class="lang-sh"><span class="hljs-built_in">cd</span> /tmp
+wget http://10.0.43.24:8066/harbor-offline-installer-v1.6.1.tgz
+tar zxvf harbor-offline-installer-v1.6.1.tgz 
+<span class="hljs-built_in">cd</span> harbor
+<span class="hljs-comment"># &#x4FEE;&#x6539;&#x914D;&#x7F6E;</span>
+<span class="hljs-comment"># &#x542F;&#x52A8; harbor</span>
+sh /data/harbor/install.sh --with-clair --with-chartmuseum
+
+docker-compose <span class="hljs-_">-f</span> ./docker-compose.yml <span class="hljs-_">-f</span> ./docker-compose.clair.yml <span class="hljs-_">-f</span> ./docker-compose.chartmuseum.yml down -v
+docker-compose <span class="hljs-_">-f</span> ./docker-compose.yml <span class="hljs-_">-f</span> ./docker-compose.clair.yml <span class="hljs-_">-f</span> ./docker-compose.chartmuseum.yml up <span class="hljs-_">-d</span>
+docker-compose <span class="hljs-_">-f</span> ./docker-compose.yml <span class="hljs-_">-f</span> ./docker-compose.clair.yml <span class="hljs-_">-f</span> ./docker-compose.chartmuseum.yml up <span class="hljs-_">-d</span> registry-web
+</code></pre>
+<h2 id="&#x6743;&#x9650;&#x7BA1;&#x7406;"><a name="&#x6743;&#x9650;&#x7BA1;&#x7406;" class="anchor-navigation-ex-anchor" href="#&#x6743;&#x9650;&#x7BA1;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x6743;&#x9650;&#x7BA1;&#x7406;</h2>
+<p>Harbor&#x57FA;&#x4E8E;&#x89D2;&#x8272;&#x7684;&#x8BBF;&#x95EE;&#x63A7;&#x5236;&#xFF0C;&#x4E0E; project &#x5173;&#x8054;&#x7684;&#x89D2;&#x8272;&#x7B80;&#x5355;&#x5730;&#x5206;&#x4E3A; Guest/Developer/Admin &#x4E09;&#x7C7B;&#xFF0C;&#x89D2;&#x8272;/project/&#x955C;&#x50CF;&#x4E09;&#x8005;&#x4E4B;&#x95F4;&#x8FDB;&#x884C;&#x5173;&#x8054;&#xFF0C;&#x4E0D;&#x540C;&#x89D2;&#x8272;&#x7684;&#x6743;&#x9650;&#x4E0D;&#x540C;&#xFF1A; </p>
+<table>
+<thead>
+<tr>
+<th>&#x89D2;&#x8272;</th>
+<th>&#x6743;&#x9650;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Guest</td>
+<td>&#x5BF9;&#x4E8E;&#x6307;&#x5B9A;&#x9879;&#x76EE;&#x62E5;&#x6709;&#x53EA;&#x8BFB;&#x6743;&#x9650;</td>
+</tr>
+<tr>
+<td>Developer</td>
+<td>&#x5BF9;&#x4E8E;&#x6307;&#x5B9A;&#x9879;&#x76EE;&#x62E5;&#x6709;&#x8BFB;&#x5199;&#x6743;&#x9650;</td>
+</tr>
+<tr>
+<td>ProjectAdmin</td>
+<td>&#x9664;&#x4E86;&#x8BFB;&#x5199;&#x6743;&#x9650;&#xFF0C;&#x540C;&#x65F6;&#x62E5;&#x6709;&#x7528;&#x6237;&#x7BA1;&#x7406;/&#x955C;&#x50CF;&#x626B;&#x63CF;&#x7B49;&#x7BA1;&#x7406;&#x6743;&#x9650;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="&#x955C;&#x50CF;&#x56DE;&#x6536;"><a name="&#x955C;&#x50CF;&#x56DE;&#x6536;" class="anchor-navigation-ex-anchor" href="#&#x955C;&#x50CF;&#x56DE;&#x6536;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x955C;&#x50CF;&#x56DE;&#x6536;</h2>
+<p>&#x98CE;&#x9669;&#x6BD4;&#x8F83;&#x9AD8;&#xFF0C;&#x5FC5;&#x987B;&#x5148;&#x5907;&#x4EFD;&#x6570;&#x636E;&#xFF0C;&#x9632;&#x6B62;&#x51FA;&#x73B0;&#x610F;&#x5916;&#x60C5;&#x51B5;&#x3002;</p>
+<p>&#x800C;&#x4E14;&#x9700;&#x8981;&#x5C06;&#x4ED3;&#x5E93;&#x8BBE;&#x7F6E;&#x4E3A;&#x53EA;&#x8BFB;&#xFF0C;&#x6216;&#x8005;&#x4E34;&#x65F6;&#x4E0B;&#x7EBF;&#x3002;</p>
+<pre class="language-"><code class="lang-sh"><span class="hljs-built_in">cd</span> /data/harbor
+docker-compose stop
+<span class="hljs-comment"># The above option &quot;--dry-run&quot; will print the progress without removing any data</span>
+docker run -it --name gc --rm --volumes-from registry goharbor/registry:2.6.2-photon garbage-collect --dry-run /etc/registry/config.yml
+docker run -it --name gc --rm --volumes-from registry goharbor/registry:2.6.2-photon garbage-collect  /etc/registry/config.yml
+docker-compose start
+</code></pre>
+<p>&#x5B9E;&#x6D4B;&#x7ED3;&#x8BBA;&#xFF1A;</p>
+<ol>
+<li>&#x5728;&#x754C;&#x9762;&#x8F6F;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x955C;&#x50CF;&#xFF0C;&#x540E;&#x7AEF;&#x6267;&#x884C;GC&#x540E;&#xFF0C;&#x955C;&#x50CF;&#x7A7A;&#x95F4;&#x53EF;&#x4EE5;&#x56DE;&#x6536;&#xFF0C;&#x4F46;&#x662F;&#x955C;&#x50CF;&#x7684;&#x5C42;&#x5E76;&#x6CA1;&#x6709;&#x88AB;&#x5220;&#x9664;&#xFF0C;&#x56E0;&#x6B64;&#x518D;&#x6B21; push &#x4F1A;&#x544A;&#x77E5; <code>Layer already exists</code></li>
+<li>&#x7531;&#x6B64;&#x53EF;&#x89C1;&#xFF0C;&#x4E0D;&#x80FD;&#x968F;&#x610F;&#x5730;&#x53BB;&#x5220;&#x9664;&#x4E00;&#x4E2A;&#x955C;&#x50CF;&#xFF0C;&#x9664;&#x975E;&#x786E;&#x5B9A;&#x8FD9;&#x4E2A;&#x955C;&#x50CF;&#x6240;&#x6709;&#x7684;&#x5C42;&#x90FD;&#x4E0D;&#x4F1A;&#x518D;&#x7528;&#x4E86;(&#x4E00;&#x822C;&#x4E0D;&#x597D;&#x786E;&#x5B9A;&#xFF0C;&#x56E0;&#x6B64;&#x4E0D;&#x662F;&#x5F88;&#x5360;&#x7A7A;&#x95F4;&#x7684;&#x955C;&#x50CF;&#x5C31;&#x522B;&#x5220;&#x4E86;)</li>
+<li>&#x5B9E;&#x9645;&#x5E94;&#x7528;&#x4E2D;&#xFF0C;&#x5E94;&#x8BE5;&#x5C06;&#x6700;&#x57FA;&#x7840;&#x7684;&#x955C;&#x50CF; push &#x5230;&#x4ED3;&#x5E93;&#x4E2D;&#xFF0C;&#x6C38;&#x4E0D;&#x5220;&#x9664;&#xFF0C;&#x800C;&#x4EE3;&#x7801;&#x6784;&#x5EFA;&#x7684;&#x955C;&#x50CF;&#x90FD;&#x662F;&#x57FA;&#x4E8E;&#x57FA;&#x7840;&#x955C;&#x50CF;&#xFF0C;&#x5728;&#x5220;&#x9664;&#x65F6;&#x53EA;&#x4F1A;&#x5220;&#x9664;&#x4EE3;&#x7801;&#x6784;&#x5EFA;&#x7684;&#x90A3;&#x4E00;&#x5C42;&#xFF0C;&#x4ECE;&#x800C;&#x53EF;&#x4EE5;&#x786E;&#x4FDD;&#x57FA;&#x7840;&#x955C;&#x50CF;&#x5C42;&#x5B89;&#x5168;&#xFF0C;&#x540C;&#x65F6;&#x8981;&#x5220;&#x9664;&#x7684;&#x4E5F;&#x5C31;&#x662F;&#x8FD9;&#x4E9B;&#x4E1A;&#x52A1;&#x4EE3;&#x7801;&#x6784;&#x5EFA;&#x7684;&#x955C;&#x50CF;</li>
+<li>&#x5C3D;&#x91CF;&#x4E0D;&#x8981;&#x5220;&#x9664;&#x6240;&#x6709;&#x955C;&#x50CF;&#xFF0C;&#x81F3;&#x5C11;&#x4FDD;&#x7559;&#x6700;&#x65B0;&#x7684;&#x4E00;&#x4E2A;&#x7248;&#x672C;</li>
+<li>&#x5728;&#x5220;&#x9664;&#x955C;&#x50CF;&#x524D;&#x8981;&#x505A;&#x597D;&#x6570;&#x636E;&#x5907;&#x4EFD;&#xFF0C;&#x955C;&#x50CF;&#x5220;&#x9664;&#x662F;&#x4E00;&#x4E2A;&#x5BB9;&#x6613;&#x51FA;&#x9519;&#x7684;&#x4E8B;&#x60C5;</li>
+<li>&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x955C;&#x50CF;&#x540C;&#x6B65;&#x4EA7;&#x751F;&#x65B0;&#x7684;&#x955C;&#x50CF;&#x4ED3;&#x5E93;&#xFF0C;&#x5C06;&#x57FA;&#x7840;&#x955C;&#x50CF;&#x540C;&#x6B65;&#x8FC7;&#x53BB;&#xFF0C;&#x7136;&#x540E;&#x5F7B;&#x5E95;&#x629B;&#x5F03;&#x8001;&#x4ED3;&#x5E93;</li>
+<li>&#x53EF;&#x4EE5;&#x8003;&#x8651;&#x4F7F;&#x7528;&#x955C;&#x50CF;&#x540C;&#x6B65;&#x505A;&#x57FA;&#x7840;&#x955C;&#x50CF;&#x5907;&#x4EFD;</li>
+</ol>
+<h2 id="harbor-api"><a name="harbor-api" class="anchor-navigation-ex-anchor" href="#harbor-api"><i class="fa fa-link" aria-hidden="true"></i></a>5. Harbor API</h2>
+<p>&#x81EA;&#x5DF1;&#x5199;&#x811A;&#x672C;&#x6269;&#x5C55;&#x529F;&#x80FD;&#x65F6;&#x975E;&#x5E38;&#x91CD;&#x8981;&#xFF1A;</p>
+<pre class="language-"><code class="lang-sh"><span class="hljs-comment"># &#x67E5;&#x770B;&#x955C;&#x50CF;&#x662F;&#x5426;&#x5728;&#x5B58;&#x5728;&#x4E8E; harbor &#x4ED3;&#x5E93;</span>
+curl -u <span class="hljs-string">&quot;scm:n7izpoc6N2&quot;</span> -X GET -H <span class="hljs-string">&quot;Content-Type: application/json&quot;</span> <span class="hljs-string">&quot;http://hub.wonhigh.cn/api/repositories/petrel%2Fpetrel-register-center/tags/1.0.0-SNAPSHOT&quot;</span>
+</code></pre>
+<p><a href="https://www.cnblogs.com/guigujun/p/8352983.html" target="_blank">HARBOR &#x4ED3;&#x5E93; API&#x529F;&#x80FD;&#x63A5;&#x53E3;</a></p>
+<p><a href="http://blog.51cto.com/dangzhiqiang/2097106" target="_blank">Harbor REST API&#x8BF4;&#x660E;</a></p>
+<h2 id="&#x95EE;&#x9898;"><a name="&#x95EE;&#x9898;" class="anchor-navigation-ex-anchor" href="#&#x95EE;&#x9898;"><i class="fa fa-link" aria-hidden="true"></i></a>6. &#x95EE;&#x9898;</h2>
+<p>Q&#xFF1A;&#x7BA1;&#x7406;&#x5458;&#x767B;&#x5F55;&#x540E;&#x6CA1;&#x6709;&#x7BA1;&#x7406;&#x5458;&#x7684;&#x64CD;&#x4F5C;&#x6743;&#x9650;&#xFF1F;
+A&#xFF1A;&#x6E05;&#x9664;&#x6D4F;&#x89C8;&#x5668;&#x7F13;&#x5B58;&#x3002;</p>
+<p>Q&#xFF1A;&#x4ED3;&#x5E93;&#x540C;&#x6B65;&#x62A5;&#x9519;&#xFF1A;hub.wonhigh.cn: no such host
+A&#xFF1A;&#x9700;&#x8981;&#x5904;&#x7406; docker-compose.yml &#x6587;&#x4EF6;&#xFF0C;&#x589E;&#x52A0;&#x5BF9; jobservice &#x670D;&#x52A1;&#x7684; extra_hosts &#x53C2;&#x6570;&#x3002;</p>
+<h2 id="&#x53C2;&#x8003;&#x8D44;&#x6599;"><a name="&#x53C2;&#x8003;&#x8D44;&#x6599;" class="anchor-navigation-ex-anchor" href="#&#x53C2;&#x8003;&#x8D44;&#x6599;"><i class="fa fa-link" aria-hidden="true"></i></a>7. &#x53C2;&#x8003;&#x8D44;&#x6599;</h2>
+<p><a href="https://www.cnblogs.com/biglittleant/p/7283738.html" target="_blank">VMware Harbor &#x5B66;&#x4E60;</a></p>
+<p><a href="https://www.jianshu.com/p/a636f20280ad" target="_blank">&#x5B89;&#x88C5;harbor1.6 &#x4F01;&#x4E1A;&#x7EA7;&#x955C;&#x50CF;&#x4ED3;&#x5E93;</a></p>
+<p><a href="http://www.sohu.com/a/196796706_609552" target="_blank">Harbor&#x5BB9;&#x5668;&#x955C;&#x50CF;&#x5B89;&#x5168;&#x6F0F;&#x6D1E;&#x626B;&#x63CF;&#x8BE6;&#x8FF0;&#x548C;&#x89C6;&#x9891;</a></p>
+<p><a href="http://www.sohu.com/a/159993452_609552" target="_blank">&#x63A2;&#x7D22;Harbor&#x955C;&#x50CF;&#x4ED3;&#x5E93;&#x65B0;&#x7684;&#x7BA1;&#x7406;&#x529F;&#x80FD;&#x548C;&#x754C;&#x9762;</a></p>
+<p><a href="http://mp.sohu.com/profile?xpt=aGVuZ2xpYmlqaUBzb2h1LmNvbQ==&amp;_f=index_pagemp_1" target="_blank">Harbor&#x6700;&#x65B0;&#x8D44;&#x8BAF;</a></p>
+<p><a href="https://www.cnblogs.com/jicki/articles/5801510.html" target="_blank">Harbor&#x5B9E;&#x73B0;&#x5BB9;&#x5668;&#x955C;&#x50CF;&#x4ED3;&#x5E93;&#x7684;&#x7BA1;&#x7406;&#x548C;&#x8FD0;&#x7EF4;</a></p>
+<p><a href="https://blog.csdn.net/liumiaocn/article/details/81813666" target="_blank">Harbor&#x57FA;&#x4E8E;&#x89D2;&#x8272;&#x7684;&#x6743;&#x9650;&#x7BA1;&#x7406;</a></p>
+<p><a href="https://blog.csdn.net/kong2030/article/details/81331142" target="_blank">Harbor&#x955C;&#x50CF;&#x5220;&#x9664;&#x7A7A;&#x95F4;&#x56DE;&#x6536;</a></p>
+<p><a href="http://qinghua.github.io/docker-registry-delete/" target="_blank">&#x5220;&#x9664;Docker Registry&#x91CC;&#x7684;&#x955C;&#x50CF;&#x600E;&#x4E48;&#x90A3;&#x4E48;&#x96BE;</a></p>
+<p><a href="http://www.itboth.com/d/u367vz/docker" target="_blank">Harbor Registry Garbage Collect(&#x5783;&#x573E;&#x56DE;&#x6536;)</a></p>
+<p><a href="https://www.cnblogs.com/atliwen/p/6101946.html" target="_blank">docker-maven-plugin &#x5B8C;&#x5168;&#x514D; Dockerfile &#x6587;&#x4EF6;</a></p>
+<p><a href="https://blog.csdn.net/hiyun9/article/details/79655385" target="_blank">Docker&#x955C;&#x50CF;&#x4ED3;&#x5E93;Harbor&#x4E3B;&#x4ECE;&#x955C;&#x50CF;&#x540C;&#x6B65;</a> </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Mars&#x4E36;&#x5C0F;&#x77F3;&#x5934; 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-11-20 15:45:27
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"harbor","level":"1.1.6.1","depth":3,"next":{"title":"日志管理","level":"1.1.7","depth":2,"ref":"","articles":[{"title":"日志归集(EFK)","level":"1.1.7.1","depth":3,"path":"log_manager/efk.md","ref":"log_manager/efk.md","articles":[]},{"title":"实时日志处理","level":"1.1.7.2","depth":3,"path":"log_manager/real_time_log.md","ref":"log_manager/real_time_log.md","articles":[]}]},"previous":{"title":"镜像仓库","level":"1.1.6","depth":2,"ref":"","articles":[{"title":"harbor","level":"1.1.6.1","depth":3,"path":"registry/harbor.md","ref":"registry/harbor.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["highlight","-search","-sharing","fontsettings","-livereload","-lunr","search-pro-kui","-sharing-plus","-github","donate","splitter","anchor-navigation-ex","prism","-disqus","tbfed-pagefooter","favicon","-rss","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Mars丶小石头 2018","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"disqus":{"shortName":"http-localhost-4000-16"},"github":{"url":"https://github.com/bjddd192"},"splitter":{},"donate":{"alipay":"/images/支付宝收钱码.jpeg","alipayText":"支付宝赞赏","button":"赞赏","title":"","wechat":"/images/微信收钱码.jpeg","wechatText":"微信赞赏"},"fontsettings":{"family":"sans","size":2,"theme":"white"},"rss":{"title":"我的 kubernetes 学习手册电子书","description":"总结和分享我在使用 kubernetes 中积累的经验与遇到的问题","author":"Mars丶小石头 <bjddd192@163.com>","feed_url":"http://gitbook.bjddd192.com/rss","site_url":"http://gitbook.bjddd912.com/","managingEditor":"bjddd192@163.com","webMaster":"bjddd192@163.com","categories":["gitbook"]},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"search-pro-kui":{},"sharing":{"qq":false,"all":["douban","facebook","google","hatenaBookmark","instapaper","line","linkedin","messenger","pocket","qq","qzone","stumbleupon","twitter","viber","vk","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Mars丶小石头 <bjddd192@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"我的 kubernetes 学习手册电子书","language":"zh-hans","gitbook":"3.2.3","description":"总结和分享我在使用 kubernetes 中积累的经验与遇到的问题"},"file":{"path":"registry/harbor.md","mtime":"2018-11-20T07:45:27.397Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-23T01:46:09.909Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro-kui/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro-kui/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+
+    </body>
+</html>
+

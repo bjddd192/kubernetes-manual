@@ -1,0 +1,931 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>dns · 我的 kubernetes 学习手册电子书</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="Mars丶小石头 <bjddd192@163.com>">
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search-pro-kui/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-donate/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-anchor-navigation-ex/style/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-prism/prism-tomorrow.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="calico.html" />
+    
+    
+
+    
+        <link rel="shortcut icon" href='../favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../favicon.ico' type="image/x-icon">
+    
+    
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    我的 kubernetes 学习手册
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" >
+            
+                <span>
+            
+                    
+                    基础知识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1.1" data-path="../basic/architecture.html">
+            
+                <a href="../basic/architecture.html">
+            
+                    
+                    kubernetes 体系结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.2" data-path="../basic/api.html">
+            
+                <a href="../basic/api.html">
+            
+                    
+                    kubernetes API 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.3" data-path="../basic/namespace.html">
+            
+                <a href="../basic/namespace.html">
+            
+                    
+                    kubernetes Namespace
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.4" data-path="../basic/node.html">
+            
+                <a href="../basic/node.html">
+            
+                    
+                    kubernetes Node
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.5" data-path="../basic/service.html">
+            
+                <a href="../basic/service.html">
+            
+                    
+                    kubernetes Service
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.1.6" data-path="../basic/volume.html">
+            
+                <a href="../basic/volume.html">
+            
+                    
+                    kubernetes Volume
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2" >
+            
+                <span>
+            
+                    
+                    网络知识
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="1.1.2.1" data-path="dns.html">
+            
+                <a href="dns.html">
+            
+                    
+                    dns
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.2.2" data-path="calico.html">
+            
+                <a href="calico.html">
+            
+                    
+                    calico
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3" >
+            
+                <span>
+            
+                    
+                    集群搭建
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.3.1" data-path="../install/deployment_architecture.html">
+            
+                <a href="../install/deployment_architecture.html">
+            
+                    
+                    部署架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.2" >
+            
+                <span>
+            
+                    
+                    kubeadm 方式
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.3" >
+            
+                <span>
+            
+                    
+                    二进制方式
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.4" data-path="../install/ansible.html">
+            
+                <a href="../install/ansible.html">
+            
+                    
+                    ansible 方式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.5" data-path="../install/rancher.html">
+            
+                <a href="../install/rancher.html">
+            
+                    
+                    rancher
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.3.6" >
+            
+                <span>
+            
+                    
+                    界面方式(期待中)
+            
+                </span>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4" >
+            
+                <span>
+            
+                    
+                    集群管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.4.1" data-path="../manage/kubectl.html">
+            
+                <a href="../manage/kubectl.html">
+            
+                    
+                    kubectl
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.4.2" data-path="../manage/rbac.html">
+            
+                <a href="../manage/rbac.html">
+            
+                    
+                    rbac
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5" >
+            
+                <span>
+            
+                    
+                    服务编排
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.5.1" data-path="../compose/common_label.html">
+            
+                <a href="../compose/common_label.html">
+            
+                    
+                    常用标签
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.2" data-path="../compose/Deployment.html">
+            
+                <a href="../compose/Deployment.html">
+            
+                    
+                    Deployment
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.3" data-path="../compose/Secret.html">
+            
+                <a href="../compose/Secret.html">
+            
+                    
+                    Secret
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.4" data-path="../compose/Statefulset.html">
+            
+                <a href="../compose/Statefulset.html">
+            
+                    
+                    Statefulset
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.5" data-path="../compose/DaemonSet.html">
+            
+                <a href="../compose/DaemonSet.html">
+            
+                    
+                    DaemonSet
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.6" data-path="../compose/ServiceAccount.html">
+            
+                <a href="../compose/ServiceAccount.html">
+            
+                    
+                    ServiceAccount
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.7" data-path="../compose/CronJob.html">
+            
+                <a href="../compose/CronJob.html">
+            
+                    
+                    CronJob
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.8" data-path="../compose/Job.html">
+            
+                <a href="../compose/Job.html">
+            
+                    
+                    Job
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.9" data-path="../compose/ConfigMap.html">
+            
+                <a href="../compose/ConfigMap.html">
+            
+                    
+                    ConfigMap
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.5.10" data-path="../compose/Ingress.html">
+            
+                <a href="../compose/Ingress.html">
+            
+                    
+                    Ingress
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.6" >
+            
+                <span>
+            
+                    
+                    镜像仓库
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.6.1" data-path="../registry/harbor.html">
+            
+                <a href="../registry/harbor.html">
+            
+                    
+                    harbor
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7" >
+            
+                <span>
+            
+                    
+                    日志管理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.7.1" data-path="../log_manager/efk.html">
+            
+                <a href="../log_manager/efk.html">
+            
+                    
+                    日志归集(EFK)
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.7.2" data-path="../log_manager/real_time_log.html">
+            
+                <a href="../log_manager/real_time_log.html">
+            
+                    
+                    实时日志处理
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.8" >
+            
+                <span>
+            
+                    
+                    未整理
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.8.1" data-path="../temp/helm.html">
+            
+                <a href="../temp/helm.html">
+            
+                    
+                    helm学习
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.9" data-path="../version_record.html">
+            
+                <a href="../version_record.html">
+            
+                    
+                    版本使用记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.10" data-path="../technology_selection.html">
+            
+                <a href="../technology_selection.html">
+            
+                    
+                    技术选型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.1.11" data-path="../qa.html">
+            
+                <a href="../qa.html">
+            
+                    
+                    问题记录
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >dns</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <div id="anchor-navigation-ex-navbar"><i class="fa fa-navicon"></i><ul><li><span class="title-icon "></span><a href="#dns"><b> </b>dns</a></li><ul><li><span class="title-icon "></span><a href="#&#x672A;&#x5BB9;&#x5668;&#x5316;&#x4E4B;&#x524D;&#x7684;&#x73B0;&#x72B6;"><b>1. </b>&#x672A;&#x5BB9;&#x5668;&#x5316;&#x4E4B;&#x524D;&#x7684;&#x73B0;&#x72B6;</a></li><ul><li><span class="title-icon "></span><a href="#&#x4E0A;&#x7EBF;&#x4E4B;&#x524D;&#x7684;&#x95EE;&#x9898;&#xFF08;&#x90E8;&#x7F72;&#x95EE;&#x9898;&#xFF09;"><b>1.1. </b>&#x4E0A;&#x7EBF;&#x4E4B;&#x524D;&#x7684;&#x95EE;&#x9898;&#xFF08;&#x90E8;&#x7F72;&#x95EE;&#x9898;&#xFF09;</a></li><li><span class="title-icon "></span><a href="#&#x4E0A;&#x7EBF;&#x4E4B;&#x540E;&#x7684;&#x95EE;&#x9898;&#xFF08;&#x8FD0;&#x7EF4;&#x95EE;&#x9898;&#xFF09;"><b>1.2. </b>&#x4E0A;&#x7EBF;&#x4E4B;&#x540E;&#x7684;&#x95EE;&#x9898;&#xFF08;&#x8FD0;&#x7EF4;&#x95EE;&#x9898;&#xFF09;</a></li><li><span class="title-icon "></span><a href="#&#x8FFD;&#x7A76;&#x539F;&#x56E0;"><b>1.3. </b>&#x8FFD;&#x7A76;&#x539F;&#x56E0;</a></li><li><span class="title-icon "></span><a href="#&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x5462;&#xFF1F;"><b>1.4. </b>&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x5462;&#xFF1F;</a></li><li><span class="title-icon "></span><a href="#&#x5E26;&#x73AF;&#x5883;&#x5B89;&#x88C5;&#x89E3;&#x51B3;&#x65B9;&#x6848;"><b>1.5. </b>&#x5E26;&#x73AF;&#x5883;&#x5B89;&#x88C5;&#x89E3;&#x51B3;&#x65B9;&#x6848;</a></li><li><span class="title-icon "></span><a href="#&#x5B66;&#x4E60;&#x5BB9;&#x5668;&#x7684;&#x597D;&#x5904;"><b>1.6. </b>&#x5B66;&#x4E60;&#x5BB9;&#x5668;&#x7684;&#x597D;&#x5904;</a></li></ul><li><span class="title-icon "></span><a href="#&#x4F7F;&#x7528;&#x5BB9;&#x5668;&#x5316;&#x4EE5;&#x540E;&#x5BF9;&#x5404;&#x804C;&#x80FD;&#x7684;&#x5F71;&#x54CD;"><b>2. </b>&#x4F7F;&#x7528;&#x5BB9;&#x5668;&#x5316;&#x4EE5;&#x540E;&#x5BF9;&#x5404;&#x804C;&#x80FD;&#x7684;&#x5F71;&#x54CD;</a></li><li><span class="title-icon "></span><a href="#&#x60E9;&#x7F5A;"><b>3. </b>&#x60E9;&#x7F5A;</a></li><li><span class="title-icon "></span><a href="#&#x5956;&#x52B1;"><b>4. </b>&#x5956;&#x52B1;</a></li></ul></ul></div><a href="#dns" id="anchorNavigationExGoTop"><i class="fa fa-arrow-up"></i></a><h1 id="dns"><a name="dns" class="anchor-navigation-ex-anchor" href="#dns"><i class="fa fa-link" aria-hidden="true"></i></a> dns</h1>
+<p><a href="https://blog.csdn.net/dkfajsldfsdfsd/article/details/81218480" target="_blank">Kubernetes&#x4E4B;&#x914D;&#x7F6E;&#x4E0E;&#x81EA;&#x5B9A;&#x4E49;DNS&#x670D;&#x52A1;</a></p>
+<p><a href="https://blog.csdn.net/dkfajsldfsdfsd/article/details/81209150" target="_blank">Kubernetes&#x4E4B;DNS</a></p>
+<p><a href="https://www.chenyudong.com/archives/docker-custom-hosts-network-via-dns.html" target="_blank">docker &#x5BB9;&#x5668;&#x81EA;&#x5B9A;&#x4E49; hosts &#x7F51;&#x7EDC;&#x8BBF;&#x95EE;</a></p>
+<h2 id="&#x672A;&#x5BB9;&#x5668;&#x5316;&#x4E4B;&#x524D;&#x7684;&#x73B0;&#x72B6;"><a name="&#x672A;&#x5BB9;&#x5668;&#x5316;&#x4E4B;&#x524D;&#x7684;&#x73B0;&#x72B6;" class="anchor-navigation-ex-anchor" href="#&#x672A;&#x5BB9;&#x5668;&#x5316;&#x4E4B;&#x524D;&#x7684;&#x73B0;&#x72B6;"><i class="fa fa-link" aria-hidden="true"></i></a>1. &#x672A;&#x5BB9;&#x5668;&#x5316;&#x4E4B;&#x524D;&#x7684;&#x73B0;&#x72B6;</h2>
+<h3 id="&#x4E0A;&#x7EBF;&#x4E4B;&#x524D;&#x7684;&#x95EE;&#x9898;&#xFF08;&#x90E8;&#x7F72;&#x95EE;&#x9898;&#xFF09;"><a name="&#x4E0A;&#x7EBF;&#x4E4B;&#x524D;&#x7684;&#x95EE;&#x9898;&#xFF08;&#x90E8;&#x7F72;&#x95EE;&#x9898;&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x4E0A;&#x7EBF;&#x4E4B;&#x524D;&#x7684;&#x95EE;&#x9898;&#xFF08;&#x90E8;&#x7F72;&#x95EE;&#x9898;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>1.1. &#x4E0A;&#x7EBF;&#x4E4B;&#x524D;&#x7684;&#x95EE;&#x9898;&#xFF08;&#x90E8;&#x7F72;&#x95EE;&#x9898;&#xFF09;</h3>
+<p>&#x636E;&#x4E86;&#x89E3;&#xFF0C;&#x5F00;&#x53D1;&#x9664;&#x4E86;&#x5B8C;&#x6210;&#x81EA;&#x5DF1;&#x7684;&#x5F00;&#x53D1;&#x4EFB;&#x52A1;&#x4EE5;&#x5916;&#xFF0C;&#x5728;&#x4E0A;&#x7EBF;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x5BF9;&#x81EA;&#x5DF1;&#x5F00;&#x53D1;&#x7684;&#x5E94;&#x7528;&#x5199;&#x4E00;&#x4E2A;&#x8BE6;&#x7EC6;&#x7684;&#x5B89;&#x88C5;&#x8BF4;&#x660E;&#xFF0C;&#x6765;&#x544A;&#x8BC9;&#x6D4B;&#x8BD5;&#x3001;&#x8FD0;&#x7EF4;&#x5982;&#x4F55;&#x90E8;&#x7F72;&#x3002;</p>
+<p>&#x4E0D;&#x8FC7;&#xFF0C;&#x5373;&#x4FBF;&#x5982;&#x6B64;&#xFF0C;&#x4ECD;&#x7136;&#x5E38;&#x5E38;&#x4F1A;&#x53D1;&#x751F;&#x90E8;&#x7F72;&#x5931;&#x8D25;&#x6216;&#x8005;&#x51FA;&#x9519;&#x7684;&#x60C5;&#x51B5;&#xFF0C;&#x53EF;&#x80FD;&#x6709;&#x4EE5;&#x4E0B;&#x539F;&#x56E0;&#xFF1A;</p>
+<ol>
+<li>&#x5B89;&#x88C5;&#x8BF4;&#x660E;&#x662F;&#x57FA;&#x4E8E;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x7F16;&#x5199;&#xFF0C;&#x4E14;&#x53EF;&#x80FD;&#x5199;&#x7684;&#x4E0D;&#x591F;&#x8BE6;&#x7EC6;&#xFF0C;&#x5BFC;&#x81F4;&#x914D;&#x7F6E;&#x9519;&#x8BEF;&#x6216;&#x8005;&#x6B65;&#x9AA4;&#x9057;&#x6F0F;&#xFF1B;</li>
+<li>&#x90E8;&#x7F72;&#x4EBA;&#x5458;&#x6C34;&#x5E73;&#x7684;&#x9AD8;&#x4F4E;&#x4E0D;&#x540C;&#xFF0C;&#x7279;&#x522B;&#x662F;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x90E8;&#x7F72;&#x4EBA;&#x5458;&#x901A;&#x5E38;&#x4E0D;&#x662F;&#x4E13;&#x4E1A;&#x8FD0;&#x7EF4;&#xFF0C;&#x4E0D;&#x4E86;&#x89E3;&#x539F;&#x7406;&#xFF0C;&#x4F9D;&#x846B;&#x82A6;&#x753B;&#x74E2;&#x66F4;&#x5BB9;&#x6613;&#x51FA;&#x9519;&#xFF1B;</li>
+<li>&#x8FD0;&#x7EF4;&#x9488;&#x5BF9;&#x5B89;&#x88C5;&#x8BF4;&#x660E;&#x505A;&#x4E86;&#x90E8;&#x7F72;&#x4E0A;&#x7684;&#x5FAE;&#x8C03;&#xFF0C;&#x5374;&#x6CA1;&#x641E;&#x6E05;&#x695A;&#x5E94;&#x7528;&#x4E4B;&#x95F4;&#x7684;&#x73AF;&#x5883;&#x914D;&#x7F6E;&#x4F9D;&#x8D56;&#x95EE;&#x9898;&#xFF1B;</li>
+</ol>
+<p>&#x5BFC;&#x81F4;&#x7684;&#x540E;&#x679C;&#xFF08;&#x4E92;&#x76F8;&#x6307;&#x8D23;&#xFF0C;&#x63A8;&#x5378;&#x8D23;&#x4EFB;&#xFF09;&#xFF1A;</p>
+<ol>
+<li>&#x5F00;&#x53D1;&#x5BF9;&#x6D4B;&#x8BD5;&#x3001;&#x8FD0;&#x7EF4;&#x4E0D;&#x4FE1;&#x4EFB;&#xFF08;&#x7ED9;&#x4E86;&#x6587;&#x6863;&#x8FD8;&#x8001;&#x51FA;&#x95EE;&#x9898;&#xFF0C;&#x4E0D;&#x5982;&#x6211;&#x81EA;&#x5DF1;&#x4E0A;&#x4E86;&#xFF09;&#xFF1B;</li>
+<li>&#x6D4B;&#x8BD5;&#x3001;&#x8FD0;&#x7EF4;&#x8D23;&#x5907;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x6587;&#x6863;&#x6CA1;&#x5199;&#x597D;&#xFF08;&#x628A;&#x5F00;&#x53D1;&#x6293;&#x8FC7;&#x6765;&#x5148;&#x628A;&#x73AF;&#x5883;&#x8DD1;&#x8D77;&#x6765;&#x518D;&#x8BF4;&#xFF09;&#xFF1B;</li>
+<li>&#x5F00;&#x53D1;&#x5F88;&#x4E0D;&#x723D;&#xFF0C;&#x53CD;&#x6B63;&#x6211;&#x7684;&#x5E94;&#x7528;&#x6CA1;&#x95EE;&#x9898;&#xFF0C;&#x5B83;&#x5728;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x8DD1;&#x7684;&#x987A;&#x6E9C;&#x7684;&#x5F88;&#xFF1B;</li>
+<li>&#x589E;&#x52A0;&#x4E86;&#x5404;&#x90E8;&#x95E8;&#x4EBA;&#x5458;&#x4E4B;&#x95F4;&#x7684;&#x6C9F;&#x901A;&#x6210;&#x672C;&#xFF1B;</li>
+<li>&#x6700;&#x7EC8;&#x73AF;&#x5883;&#x8DD1;&#x8D77;&#x6765;&#x4E86;&#xFF0C;&#x4F46;&#x662F;&#x5B8C;&#x6574;&#x7684;&#x6587;&#x6863;&#x662F;&#x6CA1;&#x6709;&#x7684;&#xFF1B;</li>
+</ol>
+<h3 id="&#x4E0A;&#x7EBF;&#x4E4B;&#x540E;&#x7684;&#x95EE;&#x9898;&#xFF08;&#x8FD0;&#x7EF4;&#x95EE;&#x9898;&#xFF09;"><a name="&#x4E0A;&#x7EBF;&#x4E4B;&#x540E;&#x7684;&#x95EE;&#x9898;&#xFF08;&#x8FD0;&#x7EF4;&#x95EE;&#x9898;&#xFF09;" class="anchor-navigation-ex-anchor" href="#&#x4E0A;&#x7EBF;&#x4E4B;&#x540E;&#x7684;&#x95EE;&#x9898;&#xFF08;&#x8FD0;&#x7EF4;&#x95EE;&#x9898;&#xFF09;"><i class="fa fa-link" aria-hidden="true"></i></a>1.2. &#x4E0A;&#x7EBF;&#x4E4B;&#x540E;&#x7684;&#x95EE;&#x9898;&#xFF08;&#x8FD0;&#x7EF4;&#x95EE;&#x9898;&#xFF09;</h3>
+<h4 id="&#x8FD0;&#x7EF4;&#x5669;&#x68A6;--&#x514B;&#x9686;&#x79FB;&#x690D;&#x5669;&#x68A6;"><a name="&#x8FD0;&#x7EF4;&#x5669;&#x68A6;--&#x514B;&#x9686;&#x79FB;&#x690D;&#x5669;&#x68A6;" class="anchor-navigation-ex-anchor" href="#&#x8FD0;&#x7EF4;&#x5669;&#x68A6;--&#x514B;&#x9686;&#x79FB;&#x690D;&#x5669;&#x68A6;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD0;&#x7EF4;&#x5669;&#x68A6;--&#x514B;&#x9686;&#x79FB;&#x690D;&#x5669;&#x68A6;</h4>
+<ol>
+<li>&#x8001;&#x677F;&#xFF1A;&#x8FD9;&#x5957;&#x4EA7;&#x54C1;A&#x4E8B;&#x4E1A;&#x90E8;&#x89C9;&#x5F97;&#x5F88;&#x597D;&#x7528;&#xFF0C;B&#x4E8B;&#x4E1A;&#x90E8;&#x4E5F;&#x5F88;&#x60F3;&#x7528;&#xFF0C;XX&#x65F6;&#x95F4;&#x5C31;&#x60F3;&#x8981;&#xFF0C;&#x54B1;&#x4EEC;&#x8D76;&#x7D27;&#x7ED9;B&#x90E8;&#x95E8;&#x518D;&#x90E8;&#x7F72;&#x4E00;&#x5957;&#x5427;&#xFF1B;</li>
+<li>&#x6D4B;&#x8BD5;&#xFF1A;&#x4E0A;&#x7EBF;&#x8FD9;&#x4E48;&#x4E45;&#x4E86;&#xFF0C;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;&#x4E0E;&#x751F;&#x4EA7;&#x73AF;&#x5883;&#x5DEE;&#x5F02;&#x633A;&#x5927;&#x7684;&#xFF0C;&#x80FD;&#x4E0D;&#x80FD;&#x5E2E;&#x514B;&#x9686;&#x4E00;&#x5957;&#x73AF;&#x5883;&#x5230;&#x8FC7;&#x6765;&#x505A;&#x6D4B;&#x8BD5;&#xFF1B;</li>
+<li>&#x5F00;&#x53D1;&#x7ECF;&#x7406;&#xFF1A;&#x6700;&#x8FD1;&#x5F00;&#x53D1;&#x505A;&#x4E86;&#x91CD;&#x5927;&#x8C03;&#x6574;&#xFF0C;&#x4E3A;&#x4E86;&#x786E;&#x4FDD;&#x5B89;&#x5168;&#xFF0C;&#x9700;&#x8981;&#x5728;&#x751F;&#x4EA7;&#x90E8;&#x7F72;&#x4E00;&#x5957;&#x5168;&#x65B0;&#x7684;&#x73AF;&#x5883;&#x6765;&#x8FDB;&#x884C;&#x7070;&#x5EA6;&#x53D1;&#x5E03;&#xFF1B;</li>
+<li>&#x8FD0;&#x7EF4;&#x7ECF;&#x7406;&#xFF1A;&#x8FD9;&#x6279;&#x673A;&#x5668;&#x8001;&#x5316;&#x4E86;&#xFF0C;&#x9700;&#x8981;&#x5347;&#x7EA7;&#xFF0C;&#x4ECA;&#x665A;&#x51C6;&#x5907;&#x505A;&#x4E00;&#x628A;&#x8FC1;&#x79FB;&#x5427;&#xFF1B;</li>
+</ol>
+<p>&#x8FD0;&#x7EF4;&#xFF1A;&#x5C3C;&#x739B;&#xFF0C;&#x6628;&#x665A;&#x53C8;&#x901A;&#x5BB5;&#x4E86;&#x3002;</p>
+<h4 id="&#x8FD0;&#x7EF4;&#x5669;&#x68A6;--&#x8D44;&#x6E90;&#x5229;&#x7528;&#x7387;&#x4F4E;"><a name="&#x8FD0;&#x7EF4;&#x5669;&#x68A6;--&#x8D44;&#x6E90;&#x5229;&#x7528;&#x7387;&#x4F4E;" class="anchor-navigation-ex-anchor" href="#&#x8FD0;&#x7EF4;&#x5669;&#x68A6;--&#x8D44;&#x6E90;&#x5229;&#x7528;&#x7387;&#x4F4E;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD0;&#x7EF4;&#x5669;&#x68A6;--&#x8D44;&#x6E90;&#x5229;&#x7528;&#x7387;&#x4F4E;</h4>
+<p>&#x673A;&#x5668;&#x8D44;&#x6E90;&#x5229;&#x7528;&#x7387;&#x4F4E;
+&#x5355;&#x673A;&#x591A;&#x5E94;&#x7528;&#x65E0;&#x6CD5;&#x6709;&#x6548;&#x9694;&#x79BB;&#xFF08;cpu&#x3001;&#x5185;&#x5B58;&#x3001;&#x786C;&#x76D8;&#xFF09;
+&#x5F00;&#x53D1;&#x3001;&#x6D4B;&#x8BD5;&#x7248;&#x672C;&#x7BA1;&#x7406;&#x590D;&#x6742;
+&#x8FC1;&#x79FB;&#x6210;&#x672C;&#x9AD8;
+&#x8865;&#x4E01;&#x73AF;&#x5883;&#x3001;&#x4F53;&#x9A8C;&#x73AF;&#x5883;</p>
+<h3 id="&#x8FFD;&#x7A76;&#x539F;&#x56E0;"><a name="&#x8FFD;&#x7A76;&#x539F;&#x56E0;" class="anchor-navigation-ex-anchor" href="#&#x8FFD;&#x7A76;&#x539F;&#x56E0;"><i class="fa fa-link" aria-hidden="true"></i></a>1.3. &#x8FFD;&#x7A76;&#x539F;&#x56E0;</h3>
+<p>&#x5E94;&#x7528; &#x73AF;&#x5883; &#x8131;&#x79BB;</p>
+<h3 id="&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x5462;&#xFF1F;"><a name="&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x5462;&#xFF1F;" class="anchor-navigation-ex-anchor" href="#&#x5982;&#x4F55;&#x89E3;&#x51B3;&#x5462;&#xFF1F;"><i class="fa fa-link" aria-hidden="true"></i></a>1.4. &#x5982;&#x4F55;&#x89E3;&#x51B3;&#x5462;&#xFF1F;</h3>
+<p>&#x5E94;&#x7528;&#x5982;&#x679C;&#x80FD;&#x5E26;&#x7740;&#x73AF;&#x5883;&#x8D70;&#x5C31;&#x597D;&#x4E86;&#xFF0C;&#x5C31;&#x50CF;&#x6211;&#x4EEC;&#x5728; windows &#x4E0B;&#x5E38;&#x7528;&#x7684;&#x7EFF;&#x8272;&#x8F6F;&#x4EF6;&#x4E00;&#x6837;&#xFF0C;&#x653E;&#x5230; u &#x76D8;&#x91CC;&#x9762;&#x5230;&#x54EA;&#x91CC;&#x90FD;&#x80FD;&#x7528;&#x3002;</p>
+<h3 id="&#x5E26;&#x73AF;&#x5883;&#x5B89;&#x88C5;&#x89E3;&#x51B3;&#x65B9;&#x6848;"><a name="&#x5E26;&#x73AF;&#x5883;&#x5B89;&#x88C5;&#x89E3;&#x51B3;&#x65B9;&#x6848;" class="anchor-navigation-ex-anchor" href="#&#x5E26;&#x73AF;&#x5883;&#x5B89;&#x88C5;&#x89E3;&#x51B3;&#x65B9;&#x6848;"><i class="fa fa-link" aria-hidden="true"></i></a>1.5. &#x5E26;&#x73AF;&#x5883;&#x5B89;&#x88C5;&#x89E3;&#x51B3;&#x65B9;&#x6848;</h3>
+<p>&#x4F7F;&#x7528;&#x865A;&#x62DF;&#x5316;&#x6280;&#x672F;&#xFF0C;&#x5C06;&#x5E94;&#x7528;&#x4E0E;&#x73AF;&#x5883;&#x6253;&#x5305;&#x5230;&#x4E00;&#x8D77;&#x3002;</p>
+<p>&#x4E3B;&#x8981;&#x6709;2&#x79CD;&#x6280;&#x672F;&#xFF1A;</p>
+<ol>
+<li>&#x865A;&#x62DF;&#x673A;&#xFF08;virtual machine&#xFF09;</li>
+<li>Linux&#x5BB9;&#x5668;&#xFF08;Linux container&#xFF0C;&#x7F29;&#x5199;&#x4E3A;LXC&#xFF09;</li>
+</ol>
+<h3 id="&#x5B66;&#x4E60;&#x5BB9;&#x5668;&#x7684;&#x597D;&#x5904;"><a name="&#x5B66;&#x4E60;&#x5BB9;&#x5668;&#x7684;&#x597D;&#x5904;" class="anchor-navigation-ex-anchor" href="#&#x5B66;&#x4E60;&#x5BB9;&#x5668;&#x7684;&#x597D;&#x5904;"><i class="fa fa-link" aria-hidden="true"></i></a>1.6. &#x5B66;&#x4E60;&#x5BB9;&#x5668;&#x7684;&#x597D;&#x5904;</h3>
+<p>&#x53EF;&#x4EE5;&#x5FEB;&#x901F;&#x4F7F;&#x7528;&#x5DF2;&#x7ECF;&#x5BB9;&#x5668;&#x5316;&#x7684;&#x4EA7;&#x54C1;&#xFF0C;&#x6BD4;&#x5982; gitlab&#x3001;mysql&#x3001;oracle&#x3001;redis &#x7B49;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x5173;&#x5FC3;&#x90E8;&#x7F72;&#x8FC7;&#x7A0B;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x5173;&#x5FC3;&#x8BED;&#x8A00;&#x73AF;&#x5883;</p>
+<p>&#x53EF;&#x4EE5;&#x5C06;&#x91CD;&#x590D;&#x7684;&#x5DE5;&#x4F5C;&#x5BB9;&#x5668;&#x5316;&#xFF0C;&#x6BD4;&#x5982; lantern&#x3001;mycat&#x3001;otter&#x3001;jmeter</p>
+<p>&#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x62E5;&#x6709;&#x5404;&#x79CD;&#x5B66;&#x4E60;&#x73AF;&#x5883;</p>
+<h2 id="&#x4F7F;&#x7528;&#x5BB9;&#x5668;&#x5316;&#x4EE5;&#x540E;&#x5BF9;&#x5404;&#x804C;&#x80FD;&#x7684;&#x5F71;&#x54CD;"><a name="&#x4F7F;&#x7528;&#x5BB9;&#x5668;&#x5316;&#x4EE5;&#x540E;&#x5BF9;&#x5404;&#x804C;&#x80FD;&#x7684;&#x5F71;&#x54CD;" class="anchor-navigation-ex-anchor" href="#&#x4F7F;&#x7528;&#x5BB9;&#x5668;&#x5316;&#x4EE5;&#x540E;&#x5BF9;&#x5404;&#x804C;&#x80FD;&#x7684;&#x5F71;&#x54CD;"><i class="fa fa-link" aria-hidden="true"></i></a>2. &#x4F7F;&#x7528;&#x5BB9;&#x5668;&#x5316;&#x4EE5;&#x540E;&#x5BF9;&#x5404;&#x804C;&#x80FD;&#x7684;&#x5F71;&#x54CD;</h2>
+<p>&#x5F00;&#x53D1;&#xFF1A;
+&#x6D4B;&#x8BD5;&#xFF1A;
+&#x8FD0;&#x7EF4;&#xFF1A;</p>
+<h2 id="&#x60E9;&#x7F5A;"><a name="&#x60E9;&#x7F5A;" class="anchor-navigation-ex-anchor" href="#&#x60E9;&#x7F5A;"><i class="fa fa-link" aria-hidden="true"></i></a>3. &#x60E9;&#x7F5A;</h2>
+<ol>
+<li>&#x8D70;&#x8DEF;&#x4E0D;&#x7A7F;&#x978B;&#xFF08;&#x6263;1&#x5206;&#xFF09;</li>
+<li>&#x6D17;&#x5B8C;&#x624B;&#x4E0D;&#x64E6;&#x5E72;&#xFF08;&#x6263;1&#x5206;&#xFF09;</li>
+<li>&#x7528;&#x624B;&#x5403;&#x996D;&#xFF08;&#x6263;1&#x5206;&#xFF09;</li>
+<li>&#x684C;&#x4E0A;&#x6389;&#x996D;&#x8D85;&#x8FC7;5&#x9897;&#x4EE5;&#x4E0A;&#xFF08;&#x6263;1&#xFF5E;2&#x5206;&#xFF09;</li>
+<li>&#x4E0A;&#x5395;&#x6240;&#x4E0D;&#x6380;&#x76D6;&#x5B50;&#xFF08;&#x6263;1&#xFF5E;2&#x5206;&#xFF09;</li>
+<li>&#x975E;&#x7761;&#x89C9;&#x65F6;&#x95F4;&#x62FF;&#x5E15;&#x5B50;&#xFF08;&#x6263;1&#x5206;&#xFF09;</li>
+<li>&#x5B66;&#x4E60;&#x65F6;&#x62D6;&#x62D6;&#x62C9;&#x62C9;&#xFF08;&#x6263;2&#x5206;&#xFF09;</li>
+<li>&#x5B66;&#x4E60;&#x65F6;&#x4E0D;&#x542C;&#x7236;&#x6BCD;&#x6307;&#x6325;&#xFF08;&#x6263;2&#x5206;&#xFF09;</li>
+<li>&#x672A;&#x7ECF;&#x5141;&#x8BB8;&#x5077;&#x73A9;&#x7535;&#x5B50;&#x4EA7;&#x54C1;&#xFF08;&#x6263;2&#x5206;&#xFF09;</li>
+<li>&#x4E0D;&#x5C0A;&#x656C;&#x957F;&#x8F88;&#xFF08;&#x6263;3&#x5206;&#xFF09;</li>
+<li>&#x4E71;&#x53D1;&#x813E;&#x6C14;&#xFF08;&#x6263;3&#x5206;&#xFF09;</li>
+<li>&#x7528;&#x529B;&#x5173;&#x95E8;&#xFF08;&#x6263;3&#x5206;&#xFF09;</li>
+</ol>
+<p>1&#x5C0F;&#x65F6;&#x5185;&#x7D2F;&#x8BA1;&#x88AB;&#x6263;&#x9664;8&#x5206;&#xFF0C;&#x6216;&#x8005;&#x7D2F;&#x8BA1;&#x88AB;&#x6263;&#x9664;20&#x5206;&#xFF0C;&#x63A5;&#x53D7;&#x60E9;&#x7F5A;&#xFF0C;&#x60E9;&#x7F5A;&#x5B8C;&#x6BD5;&#x540E;&#x6263;&#x5206;&#x5F52;&#x96F6;</p>
+<p>&#x60E9;&#x7F5A;&#x65B9;&#x5F0F;&#xFF1A;&#x81EA;&#x613F;&#x63A5;&#x53D7;&#x6212;&#x5C3A;&#x60E9;&#x6212;2&#x4E0B;&#x6216;&#x8005;&#x9762;&#x58C1;&#x601D;&#x8FC7;20&#x5206;&#x949F;&#xFF0C;&#x5982;&#x6709;&#x62B5;&#x8D56;&#x884C;&#x4E3A;&#xFF0C;&#x60E9;&#x7F5A;&#x52A0;&#x500D;&#x3002;</p>
+<h2 id="&#x5956;&#x52B1;"><a name="&#x5956;&#x52B1;" class="anchor-navigation-ex-anchor" href="#&#x5956;&#x52B1;"><i class="fa fa-link" aria-hidden="true"></i></a>4. &#x5956;&#x52B1;</h2>
+<ol>
+<li>1&#x5929;&#x5185;&#x672A;&#x6263;&#x5206;&#xFF08;&#x5956;&#x52B1;5&#x5206;&#xFF09;</li>
+<li>1&#x5468;&#x5185;&#x672A;&#x6263;&#x5206;&#xFF08;&#x5956;&#x52B1;25&#x5206;&#xFF09;</li>
+<li>&#x4E3B;&#x52A8;&#x505A;&#x5BB6;&#x52A1;&#xFF08;&#x5956;&#x52B1;1&#xFF5E;3&#x5206;&#xFF09;</li>
+<li>&#x4F5C;&#x4E1A;&#x5B8C;&#x6210;&#x4F18;&#x826F;&#xFF08;&#x5956;&#x52B1;2&#xFF5E;3&#x5206;&#xFF09;</li>
+<li>&#x53D7;&#x5230;&#x8001;&#x5E08;&#x7684;&#x8868;&#x626C;&#xFF08;&#x5956;&#x52B1;3&#xFF5E;5&#x5206;&#xFF09;</li>
+</ol>
+<p>&#x7D2F;&#x8BA1;&#x5F97;&#x5206;
+80        &#x52A8;&#x753B;&#x7535;&#x5F71;&#x4E00;&#x6B21;
+300       &#x81EA;&#x884C;&#x8F66;&#x4E00;&#x8F86;
+800       &#x5047;&#x671F;&#x65C5;&#x884C;&#x4E00;&#x6B21;</p>
+<p>&#x5956;&#x52B1;&#x4E0D;&#x80FD;&#x62B5;&#x6D88;&#x60E9;&#x7F5A;</p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; Mars&#x4E36;&#x5C0F;&#x77F3;&#x5934; 2018 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2018-11-03 23:17:47
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                
+                <a href="calico.html" class="navigation navigation-next navigation-unique" aria-label="Next page: calico">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"dns","level":"1.1.2.1","depth":3,"next":{"title":"calico","level":"1.1.2.2","depth":3,"path":"network/calico.md","ref":"network/calico.md","articles":[]},"previous":{"title":"网络知识","level":"1.1.2","depth":2,"ref":"","articles":[{"title":"dns","level":"1.1.2.1","depth":3,"path":"network/dns.md","ref":"network/dns.md","articles":[]},{"title":"calico","level":"1.1.2.2","depth":3,"path":"network/calico.md","ref":"network/calico.md","articles":[]}]},"dir":"ltr"},"config":{"plugins":["highlight","-search","-sharing","fontsettings","-livereload","-lunr","search-pro-kui","-sharing-plus","-github","donate","splitter","anchor-navigation-ex","prism","-disqus","tbfed-pagefooter","favicon","-rss","expandable-chapters"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright © Mars丶小石头 2018","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"prism":{"css":["prismjs/themes/prism-tomorrow.css"]},"disqus":{"shortName":"http-localhost-4000-16"},"github":{"url":"https://github.com/bjddd192"},"splitter":{},"donate":{"alipay":"/images/支付宝收钱码.jpeg","alipayText":"支付宝赞赏","button":"赞赏","title":"","wechat":"/images/微信收钱码.jpeg","wechatText":"微信赞赏"},"fontsettings":{"family":"sans","size":2,"theme":"white"},"rss":{"title":"我的 kubernetes 学习手册电子书","description":"总结和分享我在使用 kubernetes 中积累的经验与遇到的问题","author":"Mars丶小石头 <bjddd192@163.com>","feed_url":"http://gitbook.bjddd192.com/rss","site_url":"http://gitbook.bjddd912.com/","managingEditor":"bjddd192@163.com","webMaster":"bjddd192@163.com","categories":["gitbook"]},"highlight":{},"anchor-navigation-ex":{"associatedWithSummary":false,"float":{"floatIcon":"fa fa-navicon","level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"mode":"float","multipleH1":false,"pageTop":{"level1Icon":"fa fa-hand-o-right","level2Icon":"fa fa-hand-o-right","level3Icon":"fa fa-hand-o-right","showLevelIcon":false},"printLog":false,"showGoTop":true,"showLevel":true},"favicon":{"shortcut":"favicon.ico","bookmark":"favicon.ico"},"search-pro-kui":{},"sharing":{"qq":false,"all":["douban","facebook","google","hatenaBookmark","instapaper","line","linkedin","messenger","pocket","qq","qzone","stumbleupon","twitter","viber","vk","weibo","whatsapp"],"douban":false,"facebook":false,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":false,"messenger":false,"line":false,"vk":false,"pocket":false,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"expandable-chapters":{}},"theme":"default","author":"Mars丶小石头 <bjddd192@163.com>","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"isbn":"","variables":{},"title":"我的 kubernetes 学习手册电子书","language":"zh-hans","gitbook":"3.2.3","description":"总结和分享我在使用 kubernetes 中积累的经验与遇到的问题"},"file":{"path":"network/dns.md","mtime":"2018-11-03T15:17:47.266Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-23T01:46:09.909Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro-kui/jquery.mark.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search-pro-kui/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-donate/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+
+    </body>
+</html>
+

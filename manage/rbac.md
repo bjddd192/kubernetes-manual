@@ -7,80 +7,85 @@ k8s里面有两种用户，一种是User，一种就是service account，User给
 master 操作
 
 ```sh
+# 给 node 节点设置命令空间
+kubectl label nodes 10.0.43.33 k8s.wonhigh.cn/namespace=bst-scm-petrel-st
+kubectl label nodes 10.0.43.9 k8s.wonhigh.cn/namespace=bst-scm-petrel-st
+
 # 将用户设置为该命名空间的管理员
-kubectl create rolebinding user-bst-scm-petrel-dev-binding --clusterrole=admin --user=user-bst-scm-petrel-dev --namespace=bst-scm-petrel-dev
+kubectl create rolebinding user-bst-petrel-st-binding --clusterrole=admin --user=user-bst-petrel-st --namespace=bst-petrel-st
 ```
 
 root 操作：
 
 ```sh
-adduser k8smanager
-passwd k8smanager 
+adduser bst-petrel-st
+passwd bst-petrel-st 
 
 cp /root/local/bin/docker* /usr/local/bin/
 cp /root/local/bin/kubectl /usr/local/bin/
-usermod -G root k8smanager
-
-# 创建 ns
-kubectl create namespace bst-scm-petrel-dev
-
-# 给 node 打上 ns 标签
-kubectl label nodes 10.0.43.33 k8s.wonhigh.cn/namespace=bst-scm-petrel-dev
-kubectl label nodes 10.0.43.9 k8s.wonhigh.cn/namespace=bst-scm-petrel-dev
+usermod -G root bst-petrel-st
 
 # 复制证书文件
 cd /etc/kubernetes/ssl
-cp admin-csr.json user-bst-scm-petrel-dev-csr.json
-vim user-bst-scm-petrel-dev-csr.json
+cp admin-csr.json user-bst-petrel-st-csr.json
+sed -i 's/admin/user-bst-petrel-st/g' user-bst-petrel-st-csr.json
+sed -i 's/system:masters/k8s/g' user-bst-petrel-st-csr.json
 
 # 生成证书
 /root/local/bin/cfssl gencert \
 -ca=/etc/kubernetes/ssl/ca.pem \
 -ca-key=/etc/kubernetes/ssl/ca-key.pem \
 -config=/etc/kubernetes/ssl/ca-config.json \
--profile=kubernetes user-bst-scm-petrel-dev-csr.json | /root/local/bin/cfssljson -bare user-bst-scm-petrel-dev
+-profile=kubernetes user-bst-petrel-st-csr.json | /root/local/bin/cfssljson -bare user-bst-petrel-st
 	
 # 配置集群信息
 kubectl config set-cluster kubernetes \
 --certificate-authority=/etc/kubernetes/ssl/ca.pem \
 --embed-certs=true \
 --server=https://10.0.43.251:8443 \
---kubeconfig=user-bst-scm-petrel-dev.kubeconfig
+--kubeconfig=user-bst-petrel-st.kubeconfig
 
-chmod +r /etc/kubernetes/ssl/user-bst-scm-petrel-dev*
+chmod +r /etc/kubernetes/ssl/user-bst-petrel-st*
 
-\cp -f /etc/kubernetes/ssl/user-bst-scm-petrel-dev* /home/k8smanager/
+# 收回其他用户的执行权限
+chmod 744 /root/local/bin/cfssl*
 
 # 查看所有的集群角色
 kubectl get clusterrole
 ```
 
-k8smanager 操作：
+bst-petrel-st 操作：
 
 ```sh
 cd ~
+
+\cp -f /etc/kubernetes/ssl/user-bst-petrel-st* /home/bst-petrel-st/
+
 # 配置用户
-kubectl config set-credentials user-bst-scm-petrel-dev \
---client-certificate=user-bst-scm-petrel-dev.pem \
+kubectl config set-credentials user-bst-petrel-st \
+--client-certificate=user-bst-petrel-st.pem \
 --embed-certs=true \
---client-key=user-bst-scm-petrel-dev-key.pem \
---kubeconfig=user-bst-scm-petrel-dev.kubeconfig
+--client-key=user-bst-petrel-st-key.pem \
+--kubeconfig=user-bst-petrel-st.kubeconfig
 
 # 配置上下文  
 kubectl config set-context kubernetes \
 --cluster=kubernetes \
---user=user-bst-scm-petrel-dev \
---namespace=bst-scm-petrel-dev \
---kubeconfig=user-bst-scm-petrel-dev.kubeconfig
+--user=user-bst-petrel-st \
+--namespace=bst-petrel-st \
+--kubeconfig=user-bst-petrel-st.kubeconfig
 
 # 指定上下文  
-kubectl config use-context kubernetes --kubeconfig=user-bst-scm-petrel-dev.kubeconfig
+kubectl config use-context kubernetes --kubeconfig=user-bst-petrel-st.kubeconfig
 
 # 覆盖默认的 kubeconfig 文件
-\cp -f ./user-bst-scm-petrel-dev.kubeconfig ~/.kube/config
+\cp -f ./user-bst-petrel-st.kubeconfig ~/.kube/config
+
+# 删除中间文件
+rm -rf ~/user-bst-petrel-st*
 
 # 查看 token
-kubectl -n=bst-scm-petrel-dev describe secret $(kubectl -n=bst-scm-petrel-dev get secret | grep user-bst-scm-petrel-dev | awk '{print $1}')
+kubectl -n=bst-petrel-st describe secret $(kubectl -n=bst-petrel-st get secret | grep user-bst-petrel-st | awk '{print $1}')
 
 ```
 

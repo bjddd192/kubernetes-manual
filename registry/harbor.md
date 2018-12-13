@@ -123,4 +123,6 @@ A：需要处理 docker-compose.yml 文件，增加对 jobservice 服务的 extr
 
 [docker-maven-plugin 完全免 Dockerfile 文件](https://www.cnblogs.com/atliwen/p/6101946.html)
 
+[Maven+Docker,发布到Registry](https://www.cnblogs.com/kingsy/p/6411371.html)
+
 [Docker镜像仓库Harbor主从镜像同步](https://blog.csdn.net/hiyun9/article/details/79655385)

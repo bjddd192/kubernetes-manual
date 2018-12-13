@@ -7,9 +7,11 @@ k8s里面有两种用户，一种是User，一种就是service account，User给
 master 操作
 
 ```sh
+kubectl create namespace bst-petrel-st
+
 # 给 node 节点设置命令空间
-kubectl label nodes 10.0.43.33 k8s.wonhigh.cn/namespace=bst-scm-petrel-st
-kubectl label nodes 10.0.43.9 k8s.wonhigh.cn/namespace=bst-scm-petrel-st
+kubectl label nodes 10.0.43.33 k8s.wonhigh.cn/namespace=bst-petrel-st
+kubectl label nodes 10.0.43.9 k8s.wonhigh.cn/namespace=bst-petrel-st
 
 # 将用户设置为该命名空间的管理员
 kubectl create rolebinding user-bst-petrel-st-binding --clusterrole=admin --user=user-bst-petrel-st --namespace=bst-petrel-st

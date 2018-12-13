@@ -6,7 +6,7 @@
 
 ## 安装步骤
 
-### 安装 helm 客户端
+### 安装 helm 客户端(Linux)
 
 ```sh
 wget http://10.0.43.24:8066/helm/helm-v2.11.0-linux-amd64.tar.gz
@@ -15,6 +15,13 @@ mv linux-amd64/helm /usr/local/bin/helm
 helm help
 # 添加自动补全
 source <(helm completion bash)
+```
+
+### 安装 helm 客户端(mac)
+
+```sh
+brew install kubernetes-helm
+helm help
 ```
 
 ### 安装 helm 服务端 tiller
@@ -42,6 +49,8 @@ helm reset -f
 # 移除 helm init 创建的目录等数据
 helm reset --remove-helm-home
 ```
+
+## helm 基本操作
 
 ```sh
 # 创建示例 mychart
@@ -127,12 +136,40 @@ helm ls --deleted
 helm delete --purge mike-test
 ```
 
+## mustache
 
+[mustache.github.io](https://mustache.github.io/)
+
+### 模版对象说明
+
+Release is one of the top-level objects that you can access in your templates。
+
+- Release.Name: The release name
+- Release.Time: The time of the release
+- Release.Namespace: The namespace to be released into (if the manifest doesn’t override)
+- Release.Service: The name of the releasing service (always Tiller).
+- Release.Revision: The revision number of this release. It begins at 1 and is incremented for each helm upgrade.
+- Release.IsUpgrade: This is set to true if the current operation is an upgrade or rollback.
+- Release.IsInstall: This is set to true if the current operation is an install.
+
+## 集成CI/CD
+
+采用 Helm 可以把零散的 Kubernetes 应用配置文件作为一个 Chart 管理，Chart 源码可以和源代码一起放到 Git 库中管理。通过把 Chart 参数化，可以在测试环境和生产环境采用不同的 Chart 参数配置。
+
+下图是采用了 Helm 的一个 CI/CD 流程：
+
+![cicd](/images/cicd.png)
+
+## Helm 如何管理多环境下 (Test、Staging、Production) 的业务配置
+
+Chart 是支持参数替换的，可以把业务配置相关的参数设置为模板变量。使用 helm install 命令部署的时候指定一个参数值文件，这样就可以把业务参数从 Chart 中剥离了。例如： helm install --values=values-production.yaml wordpress。
+
+## 参考资料
 
 [Helm 入门指南](https://www.hi-linux.com/posts/21466.html)
 
-[Kubernetes之Helm包管理](http://www.showerlee.com/archives/2455)
-
-[Kubernetes 应用管理工具 Helm 使用指南](https://www.jianshu.com/p/ab26b5762cf5)
-
 [harbor-manage-helm-charts](https://github.com/goharbor/harbor/blob/master/docs/user_guide.md#manage-helm-charts)
+
+[helm--chart模板文件简单语法使用](https://www.cnblogs.com/DaweiJ/articles/8779256.html)
+
+[Helm简介](https://blog.csdn.net/chenleiking/article/details/79539012)

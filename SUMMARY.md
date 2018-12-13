@@ -11,6 +11,7 @@
     * 网络知识
         * [dns](network/dns.md)
         * [calico](network/calico.md)
+        * [fault](network/fault.md)
     * 集群搭建
         * [部署架构](install/deployment_architecture.md)
         * kubeadm 方式

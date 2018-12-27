@@ -28,6 +28,8 @@ metadata:
 data:
   stubDomains: |
     {"belle.cn": ["172.20.32.132"], "belle.net.cn": ["172.20.32.132"]}
+  upstreamNameservers: |
+    ["10.0.50.23", "10.0.50.22"]
 ```
 
 ### 参考资料

@@ -21,6 +21,7 @@
         * 界面方式(期待中)
     * 集群管理
         * [kubectl](manage/kubectl.md)
+        * [probes](manage/probes.md)
         * [rbac](manage/rbac.md)
     * 服务编排
         * [常用标签](compose/common_label.md)

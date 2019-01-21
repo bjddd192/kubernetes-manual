@@ -4,17 +4,30 @@
 
 [官方帮助文档](https://docs.helm.sh/using_helm/#installing-helm)
 
+[Helm 用户指南](https://github.com/whmzsu/helm-doc-zh-cn)
+
 ## 安装步骤
 
 ### 安装 helm 客户端(Linux)
 
+方式一：
+
 ```sh
+# wget https://storage.googleapis.com/kubernetes-helm/helm-v2.11.0-linux-amd64.tar.gz
 wget http://10.0.43.24:8066/helm/helm-v2.11.0-linux-amd64.tar.gz
 tar -zxvf helm-v2.11.0-linux-amd64.tar.gz 
 mv linux-amd64/helm /usr/local/bin/helm
 helm help
 # 添加自动补全
 source <(helm completion bash)
+```
+
+方式二：
+
+```sh
+curl https://raw.githubusercontent.com/helm/helm/master/scripts/get > get_helm.sh
+chmod 700 get_helm.sh
+./get_helm.sh
 ```
 
 ### 安装 helm 客户端(mac)
@@ -163,6 +176,28 @@ Release is one of the top-level objects that you can access in your templates。
 ## Helm 如何管理多环境下 (Test、Staging、Production) 的业务配置
 
 Chart 是支持参数替换的，可以把业务配置相关的参数设置为模板变量。使用 helm install 命令部署的时候指定一个参数值文件，这样就可以把业务参数从 Chart 中剥离了。例如： helm install --values=values-production.yaml wordpress。
+
+## 使用公网仓库
+
+```sh
+# 添加 tencent hub
+helm repo add thub https://hub.tencentyun.com/charts/tencenthub
+# 添加 aliyuncs hub
+helm repo add stable https://kubernetes.oss-cn-hangzhou.aliyuncs.com/charts
+# 添加 tencent 私仓
+helm repo add belle https://hub.tencentyun.com/charts/belle --username 100009006395 --password xxx
+
+# 下载 chart
+helm fetch thub/mysql
+
+# 测试 helm
+# helm init
+helm plugin install https://github.com/imroc/helm-push
+helm create mychart
+helm package mychart --debug
+helm push --username 100009006395 --password xxx mychart-0.1.0.tgz belle
+helm install --dry-run --debug nginx --name leo-nginx
+```
 
 ## 参考资料
 

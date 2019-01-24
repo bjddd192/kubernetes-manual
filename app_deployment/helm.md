@@ -6,6 +6,8 @@
 
 [Helm 用户指南](https://github.com/whmzsu/helm-doc-zh-cn)
 
+[helm/charts](https://github.com/helm/charts)
+
 ## 安装步骤
 
 ### 安装 helm 客户端(Linux)
@@ -177,6 +179,15 @@ Release is one of the top-level objects that you can access in your templates。
 
 Chart 是支持参数替换的，可以把业务配置相关的参数设置为模板变量。使用 helm install 命令部署的时候指定一个参数值文件，这样就可以把业务参数从 Chart 中剥离了。例如： helm install --values=values-production.yaml wordpress。
 
+## helm install 安装方法
+
+helm install 命令可以从多个来源安装:
+
+- 从 chart 仓库安装
+- 本地 chart 压缩文件 (helm install foo-0.1.1.tgz)
+- 解压缩的 chart 目录 (helm install path/to/foo)
+- 完整的 URL (helm install https://example.com/charts/foo-1.2.3.tgz)
+
 ## 使用公网仓库
 
 ```sh
@@ -196,7 +207,7 @@ helm plugin install https://github.com/imroc/helm-push
 helm create mychart
 helm package mychart --debug
 helm push --username 100009006395 --password xxx mychart-0.1.0.tgz belle
-helm install --dry-run --debug nginx --name leo-nginx
+helm install --dry-run --debug mychart --name leo-nginx
 ```
 
 ## 参考资料

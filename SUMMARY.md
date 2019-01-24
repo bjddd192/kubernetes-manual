@@ -41,6 +41,7 @@
         * [微服务部署](app_deployment/micro_service.md)
     * 日志管理
         * [日志归集(EFK)](log_manager/efk.md)
+        * [日志归集(ELK)](log_manager/elk.md)
         * [实时日志处理](log_manager/real_time_log.md)
     * 未整理
         * [helm学习](temp/helm.md)

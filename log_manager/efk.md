@@ -41,6 +41,4 @@ done
 
 [elasticsearch定期删除策略 - 日志分析系统ELK搭建](https://blog.csdn.net/xuezhangjun0121/article/details/80913678)
 
-[玩儿透围绕ELK体系大型日志分析集群方案设计.搭建.调优.管理](http://www.net-add.com/a/zidonghuayunwei/rizhifenxi/2017/0406/16.html)
 
-[从零开始搭建K8S--如何监控K8S集群日志](https://blog.csdn.net/java_zyq/article/details/82179175)

@@ -51,3 +51,7 @@ filebeat-*
 
 [ELK+Filebeat+Kafka+ZooKeeper 构建海量日志分析平台](http://blog.51cto.com/wangqh/2090276)
 
+[部署FileBeat+logstash+elasticsearch集群+kibana](http://www.yfshare.vip/2017/11/04/部署FileBeat-logstash-elasticsearch集群-kibana)
+
+[ELK+Filebeat 集中式日志解决方案详解](https://www.ibm.com/developerworks/cn/opensource/os-cn-elk-filebeat/index.html)
+

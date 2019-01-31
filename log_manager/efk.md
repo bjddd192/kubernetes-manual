@@ -1,10 +1,12 @@
 # 日志归集(EFK)
 
+[官方仓库EFK](https://github.com/kubernetes/kubernetes/tree/master/cluster/addons/fluentd-elasticsearch)
+
 ## ES数据定期删除
 
 删除脚本：
 
-```sh
+```shell
 #!/bin/bash
 ###################################
 #删除早于2天的ES集群的索引
@@ -40,5 +42,13 @@ done
 [Kibana登录认证设置](https://www.cnblogs.com/configure/p/7607302.html)
 
 [elasticsearch定期删除策略 - 日志分析系统ELK搭建](https://blog.csdn.net/xuezhangjun0121/article/details/80913678)
+
+[在Kubernetes 1.10.3上以Hard模式搭建EFK日志分析平台](https://tonybai.com/2018/06/13/setup-efk-on-kubernetes-1-10-3-in-the-hard-way/)
+
+[从ELK到EFK演进](https://www.cnblogs.com/tylercao/p/7803520.html)
+
+[EFK家族---Fluentd日志收集](https://blog.csdn.net/zzq900503/article/details/83657257)
+
+[EFK家族---Kibana介绍和使用](https://blog.csdn.net/zzq900503/article/details/84109365)
 
 

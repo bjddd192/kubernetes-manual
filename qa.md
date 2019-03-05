@@ -202,3 +202,11 @@ kibana 集中日志展示，建立dashboard分类，用户可以按namespce 分�
 
 [kubernetes device or resource busy的问题](https://www.jianshu.com/p/4fc11a0a31da)
 
+[kubernetes 1.9 与 CentOS 7.3 内核兼容问题](http://www.linuxfly.org/kubernetes-19-conflict-with-centos7/)
+
+[一行 kubernetes 1.9 代码引发的血案（与 CentOS 7.x 内核兼容性问题）](http://dockone.io/article/4797)
+
+[Cannot remove failed application deployments](https://www.ibm.com/support/knowledgecenter/en/SSBS6K_1.2.0/getting_started/known_issues.html)
+
+[Docker 报错Failed to watch directory … no space left on device](https://t.goodrain.com/t/docker-failed-to-watch-directory-no-space-left-on-device/472)
+

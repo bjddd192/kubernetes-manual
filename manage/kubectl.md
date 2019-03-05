@@ -32,6 +32,23 @@ mv /Users/yanglei/Downloads/kubectl /usr/local/bin/kubectl
 kubectl label nodes 10.0.43.33 k8s.wonhigh.cn/namespace=bst-petrel-st --overwrite
 kubectl label nodes 10.0.43.9  k8s.wonhigh.cn/namespace=bst-petrel-st --overwrite
 
+## 常用操作
+
+```sh
+# 禁止节点调度
+kubectl cordon 10.240.116.53
+# 驱逐节点 pod
+kubectl drain 10.240.116.53 --ignore-daemonsets --delete-local-data
+# 强制驱逐节点 pod
+kubectl drain 10.240.116.53 --ignore-daemonsets --delete-local-data --force
+
+# 关闭服务、重启机器...
+# 检查机器...
+
+# 恢复节点调度
+kubectl uncordon 10.240.116.53
+```
+
 ## 参考资料
 
 [Overview of kubectl](https://kubernetes.io/docs/reference/kubectl/overview/)

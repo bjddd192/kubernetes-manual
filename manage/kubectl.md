@@ -44,9 +44,60 @@ kubectl drain 10.240.116.53 --ignore-daemonsets --delete-local-data --force
 
 # 关闭服务、重启机器...
 # 检查机器...
+# 删除已退出的所有容器
+docker rm `docker ps -a | grep Exited | awk '{print $1}'` 
 
 # 恢复节点调度
 kubectl uncordon 10.240.116.53
+
+# 使用 busybox 容器测试集群，比如网络、dns 等是否正常
+kubectl run -it --rm busybox2 --image=busybox /bin/sh
+# 也可以获取官方的编排文件进行改造
+wget https://k8s.io/examples/admin/dns/busybox.yaml
+kubectl create -f busybox.yaml
+kubectl exec -it busybox2 nslookup kubernetes.default
+kubectl exec -it busybox3 nslookup kubernetes.default
+kubectl exec -it busybox2 nslookup test-dop-server.belle.net.cn
+kubectl exec -it busybox3 nslookup test-dop-server.belle.net.cn
+```
+
+```
+重启所有pods
+(删除所有pods，然后k8s根据deployment中的设置重建)
+
+kubectl delete pod $(kubectl get pods | grep -v NAME | awk '{print $1}')
+
+更新deployment数量
+kubectl scale deployment depName --replicas 1
+
+获取异常容器
+kubectl get pods | grep -v Running
+
+查看pod状态信息
+kubectl describe pod podName
+
+查看pod日志信息
+kubectl logs podName
+
+将k8s node变为不可用状态
+kubectl patch node nodeIP -p '{"spec":{"unschedulable":true}}'
+
+将k8s node变为可用状态
+kubectl patch node nodeIP -p '{"spec":{"unschedulable":false}}'
+
+```
+
+## 不常用操作
+
+```sh
+# dns 组件检查
+kubectl get endpoints kube-dns -n kube-system 
+kubectl exec -it kube-dns-84777cd667-84hzf -c kubedns -n kube-system nslookup kubernetes.default 127.0.0.1
+kubectl exec -it kube-dns-84777cd667-84hzf -c kubedns -n kube-system nslookup test-dop-server.belle.net.cn 127.0.0.1
+kubectl exec -it kube-dns-84777cd667-jg5f9 -c kubedns -n kube-system nslookup test-dop-server.belle.net.cn 127.0.0.1
+kubectl exec -it kube-dns-84777cd667-p8bvd -c kubedns -n kube-system nslookup test-dop-server.belle.net.cn 127.0.0.1
+kubectl exec -it kube-dns-84777cd667-pnsnm -c kubedns -n kube-system nslookup test-dop-server.belle.net.cn 127.0.0.1
+kubectl exec -it kube-dns-84777cd667-sbk5k -c kubedns -n kube-system nslookup test-dop-server.belle.net.cn 127.0.0.1
 ```
 
 ## 参考资料

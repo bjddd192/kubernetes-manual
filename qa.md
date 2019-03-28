@@ -210,3 +210,5 @@ kibana 集中日志展示，建立dashboard分类，用户可以按namespce 分�
 
 [Docker 报错Failed to watch directory … no space left on device](https://t.goodrain.com/t/docker-failed-to-watch-directory-no-space-left-on-device/472)
 
+[k8s 1.9 kube-dns 服务端口不监听故障处理记录](https://blog.csdn.net/ywq935/article/details/80342267)
+

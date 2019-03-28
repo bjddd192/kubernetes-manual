@@ -6,6 +6,12 @@
 
 [docker 容器自定义 hosts 网络访问](https://www.chenyudong.com/archives/docker-custom-hosts-network-via-dns.html)
 
+## 参考资料
+
+[Debugging DNS Resolution](https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/)
+
+[Verifying that DNS is working correctly within your Kubernetes platform](https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/install/cp_prereq_kubernetes_dns.html)
+
 ## 未容器化之前的现状
 
 ### 上线之前的问题（部署问题）

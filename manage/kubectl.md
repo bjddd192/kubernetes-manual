@@ -35,6 +35,9 @@ kubectl label nodes 10.0.43.9  k8s.wonhigh.cn/namespace=bst-petrel-st --overwrit
 ## 常用操作
 
 ```sh
+# 查看节点资源耗用情况
+kubectl top node
+
 # 禁止节点调度
 kubectl cordon 10.240.116.53
 # 驱逐节点 pod

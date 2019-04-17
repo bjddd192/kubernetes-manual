@@ -53,7 +53,7 @@ tee /home/k8sloger/getlog <<-'EOF'
 #sudo /root/local/bin/kubectl get namespace
 
 read -p "请输入工程名:  " val 
-result=$(sudo /root/local/bin/kubectl get pods --all-namespaces -o=wide | grep Running | grep $val | awk '{printf("k8s%03d %s\n", NR, $0)}')
+result=$(sudo /root/local/bin/kubectl get pods --all-namespaces -o=wide | grep $val | awk '{printf("k8s%03d %s\n", NR, $0)}')
 
 # 如果是echo $result，输出结果为一行，没有换行符
 # 如果是echo "$result"，输出结果为多行，有换行符

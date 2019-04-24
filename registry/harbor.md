@@ -4,7 +4,7 @@ Harbor 是一个用于存储和分发 Docker 镜像的企业级 Registry 服务�
 
 [Harbor 官网](https://github.com/goharbor/harbor)
 
-[Harbor release](https://github.com/vmware/harbor/releases)
+[Harbor release](https://github.com/goharbor/harbor/releases)
 
 [用户指南](https://github.com/goharbor/harbor/blob/master/docs/user_guide.md)
 
@@ -98,6 +98,23 @@ A：清除浏览器缓存。
 
 Q：仓库同步报错：hub.wonhigh.cn: no such host
 A：需要处理 docker-compose.yml 文件，增加对 jobservice 服务的 extra_hosts 参数。
+
+Q：点击镜像删除后，大小变成0，怎么也删不掉
+A：[Strange behaviour when deleting an repo after GC](https://github.com/goharbor/harbor/issues/5078)
+
+## 升级指南
+
+[Harbor upgrade and database migration guide](https://github.com/goharbor/harbor/blob/release-1.7.0/docs/migration_guide.md)
+
+[harbor1.6.0升级到1.7.1](https://blog.csdn.net/xiaocong66666/article/details/87866365)
+
+[harbor1.4.0升级到1.6.0](https://blog.csdn.net/xiaocong66666/article/details/87866043)
+
+## 第三方开源工具
+
+[moooofly/harbour-go-client](https://github.com/moooofly/harbor-go-client)
+
+[moooofly/harbctl](https://github.com/moooofly/harborctl)
 
 ## 参考资料
 

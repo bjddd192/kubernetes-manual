@@ -44,6 +44,8 @@
         * [日志归集(ELK)](log_manager/elk.md)
         * [filebeat](log_manager/filebeat.md)
         * [实时日志处理](log_manager/real_time_log.md)
+    * 集群监控
+        * [prometheus](monitor/prometheus.md)
     * 未整理
         * [helm学习](temp/helm.md)
     * [版本使用记录](version_record.md)

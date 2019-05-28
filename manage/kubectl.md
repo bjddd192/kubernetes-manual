@@ -37,6 +37,8 @@ kubectl label nodes 10.0.43.9  k8s.wonhigh.cn/namespace=bst-petrel-st --overwrit
 ```sh
 # 查看节点资源耗用情况
 kubectl top node
+# 按 label 查看节点资源耗用情况
+kubectl top node -l k8s.wonhigh.cn/namespace=wonhigh-petrel-dev
 
 # 禁止节点调度
 kubectl cordon 10.240.116.53
@@ -55,6 +57,7 @@ kubectl uncordon 10.240.116.53
 
 # 使用 busybox 容器测试集群，比如网络、dns 等是否正常
 kubectl run -it --rm busybox2 --image=busybox /bin/sh
+kubectl run -it --rm busybox2 --image=busybox --overrides='{ "apiVersion": "apps/v1", "kind": "Deployment", "spec": { "template": { "spec": { "nodeSelector": { "kubernetes.io/hostname": "10.0.42.176" } } } } }' /bin/sh
 # 也可以获取官方的编排文件进行改造
 wget https://k8s.io/examples/admin/dns/busybox.yaml
 kubectl create -f busybox.yaml
@@ -62,6 +65,10 @@ kubectl exec -it busybox2 nslookup kubernetes.default
 kubectl exec -it busybox3 nslookup kubernetes.default
 kubectl exec -it busybox2 nslookup test-dop-server.belle.net.cn
 kubectl exec -it busybox3 nslookup test-dop-server.belle.net.cn
+
+kubectl run -it --rm alpine --image=alpine --overrides='{ "apiVersion": "apps/v1", "kind": "Deployment", "spec": { "template": { "spec": { "nodeSelector": { "kubernetes.io/hostname": "10.0.42.176" } } } } }' /bin/sh
+apk add curl
+apk add tcpdump
 ```
 
 ```

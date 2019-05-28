@@ -30,6 +30,10 @@ docker pull quay.io/prometheus/prometheus:v2.5.0
 
 [camilb/prometheus-kubernetes](https://github.com/camilb/prometheus-kubernetes)
 
+[yanghongfei/Kubernetes](https://github.com/yanghongfei/Kubernetes/tree/master/kube-prometheus/manifests/prometheus/prometheus_rules)
+
+[grafana/kubernetes-app](https://github.com/grafana/kubernetes-app)
+
 ## 安装
 
 ```sh
@@ -51,3 +55,5 @@ kubectl apply -f .
 [在 Kubernets 中手动安装 Prometheus](https://www.qikqiak.com/k8s-book/docs/52.Prometheus%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8.html)
 
 [监控二进制的 kube-scheduler](https://www.jianshu.com/p/88d6c0975cfe)
+
+[grafana-kubernetes-app 插件](https://blog.csdn.net/mailjoin/article/details/81389700)

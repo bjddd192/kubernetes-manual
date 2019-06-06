@@ -57,3 +57,5 @@ kubectl apply -f .
 [监控二进制的 kube-scheduler](https://www.jianshu.com/p/88d6c0975cfe)
 
 [grafana-kubernetes-app 插件](https://blog.csdn.net/mailjoin/article/details/81389700)
+
+[报警神器 AlertManager 的使用](https://mp.weixin.qq.com/s/ouycoQ5-opB6UA1nZuBV6w)

@@ -69,6 +69,10 @@ kubectl exec -it busybox3 nslookup test-dop-server.belle.net.cn
 kubectl run -it --rm alpine --image=alpine --overrides='{ "apiVersion": "apps/v1", "kind": "Deployment", "spec": { "template": { "spec": { "nodeSelector": { "kubernetes.io/hostname": "10.0.42.176" } } } } }' /bin/sh
 apk add curl
 apk add tcpdump
+
+# 扩容
+kubectl scale deploy kubernetes-dashboard --replicas=1 -n kube-system
+kubectl scale rc oms-e-api.1.0.1.rc17 --replicas=3 -n belle-petrel-prod
 ```
 
 ```

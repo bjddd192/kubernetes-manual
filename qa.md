@@ -212,3 +212,4 @@ kibana 集中日志展示，建立dashboard分类，用户可以按namespce 分�
 
 [k8s 1.9 kube-dns 服务端口不监听故障处理记录](https://blog.csdn.net/ywq935/article/details/80342267)
 
+[kube-proxy 1.9.3 启动报错 Failed to execute iptables-restore: exit status 1](https://blog.csdn.net/feifei3851/article/details/89176961)

@@ -34,6 +34,8 @@ docker pull quay.io/prometheus/prometheus:v2.5.0
 
 [grafana/kubernetes-app](https://github.com/grafana/kubernetes-app)
 
+[cloudworkz/kube-eagle](https://github.com/cloudworkz/kube-eagle)
+
 ## 安装
 
 ```sh
@@ -59,3 +61,5 @@ kubectl apply -f .
 [grafana-kubernetes-app 插件](https://blog.csdn.net/mailjoin/article/details/81389700)
 
 [报警神器 AlertManager 的使用](https://mp.weixin.qq.com/s/ouycoQ5-opB6UA1nZuBV6w)
+
+[如何更有效地利用和监测Kubernetes资源？](https://mp.weixin.qq.com/s/bZynrEdetHAeOLentIYthg)

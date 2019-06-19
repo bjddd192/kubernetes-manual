@@ -140,6 +140,8 @@ A：[Strange behaviour when deleting an repo after GC](https://github.com/goharb
 
 [docker-maven-plugin 完全免 Dockerfile 文件](https://www.cnblogs.com/atliwen/p/6101946.html)
 
+[spotify/docker-maven-plugin](https://github.com/spotify/docker-maven-plugin#specify-build-info-in-the-pom)
+
 [Maven+Docker,发布到Registry](https://www.cnblogs.com/kingsy/p/6411371.html)
 
 [Docker镜像仓库Harbor主从镜像同步](https://blog.csdn.net/hiyun9/article/details/79655385)

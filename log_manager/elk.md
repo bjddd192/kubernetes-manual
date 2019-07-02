@@ -55,3 +55,4 @@ filebeat-*
 
 [ELK+Filebeat 集中式日志解决方案详解](https://www.ibm.com/developerworks/cn/opensource/os-cn-elk-filebeat/index.html)
 
+[Filebeat 模块与配置](https://www.cnblogs.com/cjsblog/p/9495024.html)

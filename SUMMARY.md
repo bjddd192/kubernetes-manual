@@ -23,6 +23,8 @@
         * [kubectl](manage/kubectl.md)
         * [probes](manage/probes.md)
         * [rbac](manage/rbac.md)
+    * 集群安全
+        * [证书轮换](safe/certificate-rotation.md)
     * 服务编排
         * [常用标签](compose/common_label.md)
         * [Deployment](compose/Deployment.md)

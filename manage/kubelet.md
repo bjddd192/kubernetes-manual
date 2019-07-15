@@ -60,3 +60,7 @@ ll /etc/kubernetes/ssl/kubelet.*
 [kubernetesk kubelet 证书到期解决方法](http://www.idcsec.com/2018/09/21/kubernetesk-kubelet%E8%AF%81%E4%B9%A6%E5%88%B0%E6%9C%9F%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/)
 
 [kubelet 证书轮换](https://kubernetes.io/zh/docs/tasks/tls/certificate-rotation/)
+
+[kubelet TLS](https://yq.aliyun.com/articles/647345)
+
+[(二进制安装)k8s1.9 证书过期及开启自动续期方案](https://blog.csdn.net/feifei3851/article/details/88390425)

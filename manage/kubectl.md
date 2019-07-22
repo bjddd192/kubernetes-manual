@@ -6,6 +6,10 @@
 
 [kube-shell](https://github.com/cloudnativelabs/kube-shell)
 
+[K8S客户端Kubectl无法下载问题的解决办法](https://blog.csdn.net/csdn_duomaomao/article/details/78568551)
+
+[中科大USTC下载](https://mirrors.ustc.edu.cn/kubernetes/apt/pool/)
+
 ### mac 安装 kubectl
 
 ```sh

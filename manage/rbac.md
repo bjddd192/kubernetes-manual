@@ -23,13 +23,13 @@ root 操作：
 adduser bst-petrel-st
 passwd bst-petrel-st 
 
-cp /root/local/bin/docker* /usr/local/bin/
-cp /root/local/bin/kubectl /usr/local/bin/
+\cp -f /root/local/bin/docker* /usr/local/bin/
+\cp -f /root/local/bin/kubectl /usr/local/bin/
 usermod -G root bst-petrel-st
 
 # 复制证书文件
 cd /etc/kubernetes/ssl
-cp admin-csr.json user-bst-petrel-st-csr.json
+\cp -f admin-csr.json user-bst-petrel-st-csr.json
 sed -i 's/admin/user-bst-petrel-st/g' user-bst-petrel-st-csr.json
 sed -i 's/system:masters/k8s/g' user-bst-petrel-st-csr.json
 

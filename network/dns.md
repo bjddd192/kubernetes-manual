@@ -12,6 +12,8 @@
 
 [Verifying that DNS is working correctly within your Kubernetes platform](https://www.ibm.com/support/knowledgecenter/en/SSYGQH_6.0.0/admin/install/cp_prereq_kubernetes_dns.html)
 
+[kubedns container cannot connect to apiserver](https://github.com/kubernetes/kubeadm/issues/193)
+
 ## 未容器化之前的现状
 
 ### 上线之前的问题（部署问题）

@@ -23,3 +23,13 @@ traefik:
     - /dev/null:/traefik.toml
 
 ```
+
+## 会话报错
+
+```yaml
+ingress.kubernetes.io /affinity: " cookie " 
+```
+
+## 参考资料
+
+[IngressController的session stick问题](https://www.itread01.com/content/1511025635.html)

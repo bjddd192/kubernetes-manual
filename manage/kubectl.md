@@ -77,6 +77,7 @@ apk add tcpdump
 # 扩容
 kubectl scale deploy kubernetes-dashboard --replicas=1 -n kube-system
 kubectl scale rc oms-e-api.1.0.1.rc17 --replicas=3 -n belle-petrel-prod
+kubectl -n belle-logistics-prod scale rc logistics-wms-city-yg.2.4.0-sp1.rc1 --replicas=5
 ```
 
 ```

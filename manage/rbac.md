@@ -104,3 +104,5 @@ kubectl -n=bst-petrel-st describe secret $(kubectl -n=bst-petrel-st get secret |
 [kubernetes RBAC实战 kubernetes 用户角色访问控制](https://studygolang.com/articles/11730?fr=sidebar)
 
 [为 Kubernetes 搭建支持 OpenId Connect 的身份认证系统](https://www.ibm.com/developerworks/cn/cloud/library/cl-lo-openid-connect-kubernetes-authentication/index.html)
+
+[为kubernetes dashboard访问用户添加权限控制](https://www.qikqiak.com/post/add-authorization-for-kubernetes-dashboard/)

@@ -6,6 +6,25 @@
 
 [docker 容器自定义 hosts 网络访问](https://www.chenyudong.com/archives/docker-custom-hosts-network-via-dns.html)
 
+## kubernetes（k8s）DNS 服务反复重启解决
+
+Kube DNS 服务反复重启现象，报错如下：
+
+```sh
+k8s.io/dns/pkg/dns/dns.go:150: Failed to list *v1.Service: Get https://10.96.0.1:443/api/v1/services?resourceVersion=0: dial tcp 10.96.0.1:443: getsockopt: no route to host
+```
+
+这很可能是 iptables 规则乱了，解决：
+
+```sh
+systemctl stop kubelet
+systemctl stop docker
+iptables --flush
+iptables -tnat --flush
+systemctl start docker
+systemctl start kubelet
+```
+
 ## 参考资料
 
 [Debugging DNS Resolution](https://kubernetes.io/docs/tasks/administer-cluster/dns-debugging-resolution/)

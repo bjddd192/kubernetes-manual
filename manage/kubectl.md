@@ -78,6 +78,13 @@ apk add tcpdump
 kubectl scale deploy kubernetes-dashboard --replicas=1 -n kube-system
 kubectl scale rc oms-e-api.1.0.1.rc17 --replicas=3 -n belle-petrel-prod
 kubectl -n belle-logistics-prod scale rc logistics-wms-city-yg.2.4.0-sp1.rc1 --replicas=5
+
+# 查看 pod 重启次数
+kubectl get pod --all-namespaces -o=wide | awk '{if($5>0)print($0)}'
+# 生成重启 pod 命令
+kubectl get pod --all-namespaces -o=wide | awk '{if($5>1)print("kubectl -n "$1" delete pod "$2)}'
+# 获取最近部署的 pod（分钟级）
+kubectl get pod --all-namespaces -o=wide | awk '{if($6~"m")print($0)}'
 ```
 
 ```

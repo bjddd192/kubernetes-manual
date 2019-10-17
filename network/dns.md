@@ -6,6 +6,8 @@
 
 [docker 容器自定义 hosts 网络访问](https://www.chenyudong.com/archives/docker-custom-hosts-network-via-dns.html)
 
+[KubeDNS 架构组成及实现原理](https://hansedong.github.io/2018/11/22/10/)
+
 ## kubernetes（k8s）DNS 服务反复重启解决
 
 Kube DNS 服务反复重启现象，报错如下：

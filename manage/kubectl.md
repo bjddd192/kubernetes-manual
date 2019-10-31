@@ -83,6 +83,7 @@ kubectl -n belle-logistics-prod scale rc logistics-wms-city-yg.2.4.0-sp1.rc1 --r
 kubectl get pod --all-namespaces -o=wide | awk '{if($5>6)print($0)}'
 # 生成重启 pod 命令
 kubectl get pod --all-namespaces -o=wide | awk '{if($5>6)print("kubectl -n "$1" delete pod "$2)}'
+kubectl get pod --all-namespaces -o=wide | grep 0/ | awk '{if($5>6)print("kubectl -n "$1" delete pod "$2)}'
 # 获取最近部署的 pod（分钟级）
 kubectl get pod --all-namespaces -o=wide | awk '{if($6~"m")print($0)}'
 

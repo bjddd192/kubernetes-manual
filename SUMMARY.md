@@ -23,6 +23,12 @@
         * [kubectl](manage/kubectl.md)
         * [probes](manage/probes.md)
         * [rbac](manage/rbac.md)
+    * 集群管理工具
+        * [octant](manage_tools/octant.md)
+        * [k9s](manage_tools/k9s.md)
+        * [kuboard](manage_tools/kuboard.md)
+        * [KubeSphere](manage_tools/KubeSphere.md)
+        * [Rancher](manage_tools/Rancher.md)
     * 集群安全
         * [证书轮换](safe/certificate-rotation.md)
     * 服务编排

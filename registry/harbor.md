@@ -80,16 +80,33 @@ docker-compose start
 
 ## Harbor API
 
+[View and test Harbor REST API via Swagger](https://github.com/goharbor/harbor/blob/v1.7.5/docs/configure_swagger.md)
+
 自己写脚本扩展功能时非常重要：
 
 ```sh
 # 查看镜像是否在存在于 harbor 仓库
 curl -u "scm:n7izpoc6N2" -X GET -H "Content-Type: application/json" "http://hub.wonhigh.cn/api/repositories/petrel%2Fpetrel-register-center/tags/1.0.0-SNAPSHOT"
+
+# 删除镜像
+curl -u "scm:n7izpoc6N2" -X DELETE -H 'Content-Type: application/json' "http://10.0.30.209/api/repositories/zabbix/zabbix-test/tags/3.4.5.2" -s -w %{http_code}
 ```
 
 [HARBOR 仓库 API功能接口](https://www.cnblogs.com/guigujun/p/8352983.html)
 
 [Harbor REST API说明](http://blog.51cto.com/dangzhiqiang/2097106)
+
+[Harbor api 操作](https://www.cnblogs.com/klvchen/p/9815073.html)
+
+## 镜像删除
+
+[python清理docker-harbor的多余镜像](https://www.cnblogs.com/kaishirenshi/p/11461504.html)
+
+[Harbor删除镜像后且GC清理后，磁盘空间没有释放的问题](https://www.cnblogs.com/xzkzzz/p/10151482.html)
+
+[Harbor存储回收](https://www.jianshu.com/p/39848f4b3ecc)
+
+[Harbor镜像迁移](https://www.cnblogs.com/breezey/p/10615242.html)
 
 ## 问题
 

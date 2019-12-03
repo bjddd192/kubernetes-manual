@@ -29,6 +29,7 @@
         * [kuboard](manage_tools/kuboard.md)
         * [KubeSphere](manage_tools/KubeSphere.md)
         * [Rancher](manage_tools/Rancher.md)
+        * [Portainer](manage_tools/Portainer.md)
     * 集群安全
         * [证书轮换](safe/certificate-rotation.md)
     * 服务编排

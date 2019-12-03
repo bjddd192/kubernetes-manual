@@ -9,7 +9,7 @@ master 操作
 ```sh
 kubectl create namespace bst-petrel-st
 
-# 给 node 节点设置命令空间
+# 给 node 节点设置命名空间
 kubectl label nodes 10.0.43.33 k8s.wonhigh.cn/namespace=bst-petrel-st
 kubectl label nodes 10.0.43.9 k8s.wonhigh.cn/namespace=bst-petrel-st
 

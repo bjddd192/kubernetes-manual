@@ -1,5 +1,33 @@
 # kubelet
 
+## kubelet 的主要功能
+
+kubelet 默认监听四个端口，分别为 10250 、10255、10248、4194
+
+```sh
+netstat -nlap | grep LISTEN| grep kubelet
+tcp        0      0 10.243.2.165:4194       0.0.0.0:*               LISTEN      24602/kubelet       
+tcp        0      0 127.0.0.1:10248         0.0.0.0:*               LISTEN      24602/kubelet       
+tcp        0      0 10.243.2.165:10250      0.0.0.0:*               LISTEN      24602/kubelet       
+tcp        0      0 10.243.2.165:10255      0.0.0.0:*               LISTEN      24602/kubelet       
+unix  2      [ ACC ]     STREAM     LISTENING     115516923 24602/kubelet        /var/run/dockershim.sock
+
+# 10250（kubelet API）：kubelet server 与 apiserver 通信的端口，定期请求 apiserver 获取自己所应当处理的任务，通过该端口可以访问获取 node 资源以及状态。
+
+# 10248（健康检查端口）：通过访问该端口可以判断 kubelet 是否正常工作, 通过 kubelet 的启动参数 --healthz-port 和 --healthz-bind-address 来指定监听的地址和端口。
+# curl http://127.0.0.1:10248/healthz
+
+# 4194（cAdvisor 监听）：kublet 通过该端口可以获取到该节点的环境信息以及 node 上运行的容器状态等内容，访问 http://localhost:4194 可以看到 cAdvisor 的管理界面,通过 kubelet 的启动参数 --cadvisor-port 可以指定启动的端口。
+# curl  http://127.0.0.1:4194/metrics
+
+# 10255 （readonly API）：提供了 pod 和 node 的信息，接口以只读形式暴露出去，访问该端口不需要认证和鉴权。
+# 获取 pod 的接口，与 apiserver 的 
+# http://127.0.0.1:8080/api/v1/pods?fieldSelector=spec.nodeName=  接口类似
+# curl  http://127.0.0.1:10255/pods
+# 节点信息接口,提供磁盘、网络、CPU、内存等信息
+# curl http://127.0.0.1:10255/spec/
+```
+
 ## 常用操作
 
 ```sh
@@ -64,3 +92,5 @@ ll /etc/kubernetes/ssl/kubelet.*
 [kubelet TLS](https://yq.aliyun.com/articles/647345)
 
 [(二进制安装)k8s1.9 证书过期及开启自动续期方案](https://blog.csdn.net/feifei3851/article/details/88390425)
+
+[kubelet 架构浅析](https://www.cnblogs.com/liuhongru/p/11215457.html)

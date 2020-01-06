@@ -8,6 +8,8 @@
 
 [KubeDNS 架构组成及实现原理](https://hansedong.github.io/2018/11/22/10/)
 
+[Kubernetes DNS 高阶指南](https://juejin.im/entry/5b84a90f51882542e60663cc)
+
 ## kubernetes（k8s）DNS 服务反复重启解决
 
 Kube DNS 服务反复重启现象，报错如下：

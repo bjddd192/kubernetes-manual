@@ -1,5 +1,7 @@
 # Deployment
 
+Deployment 集成了上线部署、滚动升级、创建副本、暂停上线任务，恢复上线任务，回滚到以前某一版本（成功/稳定）的 Deployment 等功能，在某种程度上，Deployment 可以实现无人值守的上线，大大降低上线过程的复杂沟通、操作风险。
+
 Deployment 为 Pod 和 ReplicaSet 提供了一个声明式定义(declarative)方法，用来替代以前的 ReplicationController 来方便的管理应用。典型的应用场景包括：
 
 - 定义 Deployment 来创建 Pod 和 ReplicaSet
@@ -177,6 +179,48 @@ kubectl rollout undo deployment leo-nginx -n dev-web
 
 # 回滚到指定版本
 kubectl rollout undo deployment leo-nginx --to-revision=1 -n dev-web
+
+# -----------------------------------------------------------------------------------
+
+# 创建应用
+# --record 使用此参数将记录后续创建对象的操作，方便管理与问题追溯
+kubectl apply -f app_deploy_deployment.yaml --record
+
+# 查看应用状态
+kubectl -n wonhigh-petrel-dev rollout status deployment dev-petrel-email-api.v20191025.002 -v4
+
+# 查看应用详情
+kubectl -n wonhigh-petrel-dev describe deployment dev-petrel-email-api.v20191025.002
+
+# 查看应用部署版本
+kubectl -n wonhigh-petrel-dev rollout history deployment dev-petrel-email-api.v20191025.002
+
+# 查看指定的应用部署版本
+kubectl -n wonhigh-petrel-dev rollout history deployment dev-petrel-email-api.v20191025.002 --revision=1
+
+# 升级应用
+kubectl -n wonhigh-petrel-dev set image deployment dev-petrel-email-api.v20191025.002 dev-petrel-email-api=hub.wonhigh.cn/petrel/petrel-email-api:V20190926.001
+# 使用 yaml 文件升级
+kubectl apply -f app_deploy_deployment.yaml --record
+
+# 暂停升级
+kubectl -n wonhigh-petrel-dev rollout pause deployment dev-petrel-email-api.v20191025.002
+
+# 恢复升级
+kubectl -n wonhigh-petrel-dev rollout resume deployment dev-petrel-email-api.v20191025.002
+
+# 回滚到上一版本
+kubectl -n wonhigh-petrel-dev rollout undo deployment dev-petrel-email-api.v20191025.002 
+
+# 回滚到指定版本
+kubectl -n wonhigh-petrel-dev rollout undo deployment dev-petrel-email-api.v20191025.002 --to-revision=6
+
+# 应用更新前后的 RS 都会保留下来
+kubectl -n wonhigh-petrel-dev get rs | grep dev-petrel-email-api
+
+# 销毁应用
+kubectl -n wonhigh-petrel-dev  delete deployment dev-petrel-email-api.v20191025.002
+kubectl delete -f app_deploy_deployment.yaml
 ```
 
 ## 参考资料

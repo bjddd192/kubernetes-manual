@@ -8,6 +8,8 @@ Kuboard 是一款免费的基于 Kubernetes 的微服务管理界面。
 
 [eip-work/kuboard-press](https://github.com/eip-work/kuboard-press/)
 
+[docker hub](https://hub.docker.com/r/eipwork/kuboard)
+
 ### 常用命令
 
 ```sh

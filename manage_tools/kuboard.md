@@ -6,6 +6,8 @@ Kuboard 是一款免费的基于 Kubernetes 的微服务管理界面。
 
 [官方文档](https://www.kuboard.cn/install/install-dashboard.html)
 
+[更新记录](https://kuboard.cn/support/change-log/v1.0.x.html#v1-0-8)
+
 [eip-work/kuboard-press](https://github.com/eip-work/kuboard-press/)
 
 [docker hub](https://hub.docker.com/r/eipwork/kuboard)
@@ -50,3 +52,4 @@ http://10.0.43.31:32567/#/dashboard?k8sToken=eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ
 
 [为什么有了Kubernetes Dashboard，我却选Kuboard?](https://www.kubernetes.org.cn/5577.html)
 
+[授权 kuboard-viewer 查看日志](https://kuboard.cn/learning/k8s-advanced/sec/rbac/logs.html)

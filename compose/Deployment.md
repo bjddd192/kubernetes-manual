@@ -221,6 +221,9 @@ kubectl -n wonhigh-petrel-dev get rs | grep dev-petrel-email-api
 # 销毁应用
 kubectl -n wonhigh-petrel-dev  delete deployment dev-petrel-email-api.v20191025.002
 kubectl delete -f app_deploy_deployment.yaml
+
+# 它是先删除后创建不能滚动，会有短暂的停服问题
+kubectl replace -f springboot-web2.yaml --force
 ```
 
 ## 参考资料

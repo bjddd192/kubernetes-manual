@@ -45,11 +45,14 @@ kubectl top node
 kubectl top node -l k8s.wonhigh.cn/namespace=wonhigh-petrel-dev
 
 # 禁止节点调度
-kubectl cordon 10.240.116.53
+kubectl cordon 10.244.3.138
 # 驱逐节点 pod
-kubectl drain 10.240.116.53 --ignore-daemonsets --delete-local-data
+kubectl drain 10.244.3.138 --ignore-daemonsets --delete-local-data
 # 强制驱逐节点 pod
-kubectl drain 10.240.116.53 --ignore-daemonsets --delete-local-data --force
+kubectl drain 10.244.3.138 --ignore-daemonsets --delete-local-data --force
+
+systemctl stop kubelet
+systemctl stop docker
 
 # 关闭服务、重启机器...
 # 检查机器...
@@ -91,7 +94,7 @@ kubectl get pod --all-namespaces -o=wide | awk '{if($6~"m")print($0)}'
 systemctl stop kubelet && systemctl stop docker && systemctl status docker
 ```
 
-```
+```sh
 重启所有pods
 (删除所有pods，然后k8s根据deployment中的设置重建)
 

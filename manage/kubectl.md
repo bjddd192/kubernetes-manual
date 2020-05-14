@@ -83,15 +83,31 @@ kubectl scale rc oms-e-api.1.0.1.rc17 --replicas=3 -n belle-petrel-prod
 kubectl -n belle-logistics-prod scale rc logistics-wms-city-yg.2.4.0-sp1.rc1 --replicas=5
 
 # 查看 pod 重启次数
-kubectl get pod --all-namespaces -o=wide | awk '{if($5>0)print($0)}'
+kubectl get pod --all-namespaces -o=wide | grep -v prometheus-k8s | awk '{if($5>0)print($0)}'
 # 生成重启 pod 命令
-kubectl get pod --all-namespaces -o=wide | awk '{if($5>0)print("kubectl -n "$1" delete pod "$2)}'
+kubectl get pod --all-namespaces -o=wide | grep -v prometheus-k8s | grep -v NAMESPACE | awk '{if($5>0)print("kubectl -n "$1" delete pod "$2)}'
 kubectl get pod --all-namespaces -o=wide | grep 0/ | awk '{if($5>6)print("kubectl -n "$1" delete pod "$2)}'
 # 获取最近部署的 pod（分钟级）
 kubectl get pod --all-namespaces -o=wide | awk '{if($6~"m")print($0)}'
 
 # 停止容器服务
 systemctl stop kubelet && systemctl stop docker && systemctl status docker
+
+# 导出堆栈脚本
+export DUMP_APP=pm-wms-api-74b7c74cd6-ljg2z
+kubectl -n belle-scm-press exec -it $DUMP_APP bash
+
+# 导出堆栈
+cd /tmp
+rm -rf /tmp/app.dump
+export pid=`ps | grep java | grep -v grep | awk '{print($1)}'`
+jmap -dump:format=b,file=/tmp/app.dump $pid
+exit
+
+# 压缩
+kubectl -n belle-scm-press cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
+zip -r /tmp/$DUMP_APP.zip /tmp/$DUMP_APP.dump
+sz /tmp/$DUMP_APP.zip
 ```
 
 ```sh

@@ -215,3 +215,5 @@ kibana 集中日志展示，建立dashboard分类，用户可以按namespce 分�
 [kube-proxy 1.9.3 启动报错 Failed to execute iptables-restore: exit status 1](https://blog.csdn.net/feifei3851/article/details/89176961)
 
 [kernel:unregister_netdevice: waiting for eth0 to become free. Usage count = 1](https://github.com/kubernetes/kubernetes/issues/64743)
+
+[记一次kubernetes集群异常：kubelet链接apiserver超时 update node status exceeds retry count](https://www.shangmayuan.com/a/840bd59c9c654179ab1ff234.html)  实际遇到的通过重启kube-api、haproxy服务得到解决。

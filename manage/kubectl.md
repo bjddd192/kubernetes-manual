@@ -45,11 +45,11 @@ kubectl top node
 kubectl top node -l k8s.wonhigh.cn/namespace=wonhigh-petrel-dev
 
 # 禁止节点调度
-kubectl cordon 10.244.3.138
+kubectl cordon 10.244.3.146
 # 驱逐节点 pod
-kubectl drain 10.244.3.138 --ignore-daemonsets --delete-local-data
+kubectl drain 10.244.3.146 --ignore-daemonsets --delete-local-data
 # 强制驱逐节点 pod
-kubectl drain 10.244.3.138 --ignore-daemonsets --delete-local-data --force
+kubectl drain 10.244.3.146 --ignore-daemonsets --delete-local-data --force
 
 systemctl stop kubelet
 systemctl stop docker

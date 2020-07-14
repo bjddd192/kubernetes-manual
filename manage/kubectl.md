@@ -45,11 +45,11 @@ kubectl top node
 kubectl top node -l k8s.wonhigh.cn/namespace=wonhigh-petrel-dev
 
 # 禁止节点调度
-kubectl cordon 10.244.3.146
+kubectl cordon 10.244.3.136
 # 驱逐节点 pod
-kubectl drain 10.244.3.146 --ignore-daemonsets --delete-local-data
+kubectl drain 10.244.3.136 --ignore-daemonsets --delete-local-data
 # 强制驱逐节点 pod
-kubectl drain 10.244.3.146 --ignore-daemonsets --delete-local-data --force
+kubectl drain 10.244.3.136 --ignore-daemonsets --delete-local-data --force
 
 systemctl stop kubelet
 systemctl stop docker
@@ -60,7 +60,7 @@ systemctl stop docker
 docker rm `docker ps -a | grep Exited | awk '{print $1}'` 
 
 # 恢复节点调度
-kubectl uncordon 10.240.116.53
+kubectl uncordon 10.244.3.136
 
 # 使用 busybox 容器测试集群，比如网络、dns 等是否正常
 kubectl run -it --rm busybox2 --image=busybox /bin/sh

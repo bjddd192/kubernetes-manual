@@ -26,6 +26,12 @@ root@node2# ip route
 # 则Calico将不会创建tunl0网络接口，路由规则直接使用物理机网卡作为路由器转发。
 ```
 
+### 在SDWAN下网络请求异常排查
+
+需要修改calico的mtu值
+
+[calico 三、IPPool与封装](https://www.yxingxing.net/archives/calico-20200313-tunnel#%E4%BF%AE%E6%94%B9mtu)
+
 [Kubernetes之部署calico网络](https://blog.51cto.com/newfly/2062210)
 
 [Calico网络不通的排查思路](https://mp.weixin.qq.com/s/MZIj_cvvtTiAfNf_0lpfTg)

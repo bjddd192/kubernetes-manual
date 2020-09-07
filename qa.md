@@ -219,3 +219,5 @@ kibana 集中日志展示，建立dashboard分类，用户可以按namespce 分�
 [记一次kubernetes集群异常：kubelet链接apiserver超时 update node status exceeds retry count](https://www.shangmayuan.com/a/840bd59c9c654179ab1ff234.html)  实际遇到的通过重启kube-api、haproxy服务得到解决。
 
 [Cgroup泄漏--潜藏在你的集群中](https://tencentcloudcontainerteam.github.io/2018/12/29/cgroup-leaking/)
+
+[在网络分区下提高Kubernetes的响应能力](https://medium.com/expedia-group-tech/improving-kubernetes-responsiveness-under-network-partitioning-df00403a6d97)

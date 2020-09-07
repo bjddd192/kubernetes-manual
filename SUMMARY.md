@@ -43,6 +43,8 @@
         * [Job](compose/Job.md)
         * [ConfigMap](compose/ConfigMap.md)
         * [Ingress](compose/Ingress.md)
+        * [Job](compose/Job.md)
+        * [Service](compose/Service.md)
     * 镜像仓库
         * [harbor](registry/harbor.md)
     * 应用部署

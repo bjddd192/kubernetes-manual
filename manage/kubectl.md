@@ -45,11 +45,11 @@ kubectl top node
 kubectl top node -l k8s.wonhigh.cn/namespace=wonhigh-petrel-dev
 
 # 禁止节点调度
-kubectl cordon 10.244.3.136
+kubectl cordon 10.244.3.135
 # 驱逐节点 pod
-kubectl drain 10.244.3.136 --ignore-daemonsets --delete-local-data
+kubectl drain 10.244.3.135 --ignore-daemonsets --delete-local-data
 # 强制驱逐节点 pod
-kubectl drain 10.244.3.136 --ignore-daemonsets --delete-local-data --force
+kubectl drain 10.244.3.135 --ignore-daemonsets --delete-local-data --force
 
 systemctl stop kubelet
 systemctl stop docker
@@ -60,7 +60,7 @@ systemctl stop docker
 docker rm `docker ps -a | grep Exited | awk '{print $1}'` 
 
 # 恢复节点调度
-kubectl uncordon 10.244.3.136
+kubectl uncordon 10.244.3.135
 
 # 使用 busybox 容器测试集群，比如网络、dns 等是否正常
 kubectl run -it --rm busybox2 --image=busybox /bin/sh
@@ -147,6 +147,19 @@ kubectl exec -it kube-dns-84777cd667-jg5f9 -c kubedns -n kube-system nslookup te
 kubectl exec -it kube-dns-84777cd667-p8bvd -c kubedns -n kube-system nslookup test-dop-server.belle.net.cn 127.0.0.1
 kubectl exec -it kube-dns-84777cd667-pnsnm -c kubedns -n kube-system nslookup test-dop-server.belle.net.cn 127.0.0.1
 kubectl exec -it kube-dns-84777cd667-sbk5k -c kubedns -n kube-system nslookup test-dop-server.belle.net.cn 127.0.0.1
+
+# 删除 deployment 时保留 pod
+kubectl -n belle-scm-press delete deployment pm-smd-bizrec-api --cascade=false
+
+# 双横线分隔要在容器内执行的命令
+kubectl -n belle-scm-press exec pm-smd-bizrec-api-6dff75cdd5-jz528 -- curl -s http://www.baidu.com
+
+# 获取所有节点的 ExternalIP
+kubectl -n belle-logistics-uat get nodes -o jsonpath='{.items[*].status.addresses[?(@.type=="ExternalIP")].address}'
+
+# 快速创建一个dns查询pod
+kubectl run dnsutils --image=tutum/dnsutils --generator=run-pod/v1 --command -- sleep infinity 
+kubectl exec dnsutils -- nslookup oms-web.belle-petrel-uat
 ```
 
 ## 参考资料
@@ -155,3 +168,4 @@ kubectl exec -it kube-dns-84777cd667-sbk5k -c kubedns -n kube-system nslookup te
 
 [Mac中使用brew安装指定版本软件包](https://segmentfault.com/a/1190000015346120?utm_source=tag-newest)
 
+[kubectl技巧之通过jsonpath截取属性](https://www.cnblogs.com/tylerzhou/p/11049050.html)

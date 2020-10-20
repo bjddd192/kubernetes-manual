@@ -45,11 +45,11 @@ kubectl top node
 kubectl top node -l k8s.wonhigh.cn/namespace=wonhigh-petrel-dev
 
 # 禁止节点调度
-kubectl cordon 10.244.3.135
+kubectl cordon 10.244.3.111
 # 驱逐节点 pod
-kubectl drain 10.244.3.135 --ignore-daemonsets --delete-local-data
+kubectl drain 10.244.3.111 --ignore-daemonsets --delete-local-data
 # 强制驱逐节点 pod
-kubectl drain 10.244.3.135 --ignore-daemonsets --delete-local-data --force
+kubectl drain 10.244.3.111 --ignore-daemonsets --delete-local-data --force
 
 systemctl stop kubelet
 systemctl stop docker
@@ -60,7 +60,7 @@ systemctl stop docker
 docker rm `docker ps -a | grep Exited | awk '{print $1}'` 
 
 # 恢复节点调度
-kubectl uncordon 10.244.3.135
+kubectl uncordon 10.244.3.111
 
 # 使用 busybox 容器测试集群，比如网络、dns 等是否正常
 kubectl run -it --rm busybox2 --image=busybox /bin/sh
@@ -94,8 +94,8 @@ kubectl get pod --all-namespaces -o=wide | awk '{if($6~"m")print($0)}'
 systemctl stop kubelet && systemctl stop docker && systemctl status docker
 
 # 导出堆栈脚本
-export DUMP_APP=pm-wms-api-74b7c74cd6-ljg2z
-kubectl -n belle-scm-press exec -it $DUMP_APP bash
+export DUMP_APP=oms-ration-api-54f9887d98-2xrv7
+kubectl -n belle-petrel-prod exec -it $DUMP_APP bash
 
 # 导出堆栈
 cd /tmp
@@ -105,7 +105,7 @@ jmap -dump:format=b,file=/tmp/app.dump $pid
 exit
 
 # 压缩
-kubectl -n belle-scm-press cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
+kubectl -n belle-petrel-prod cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
 zip -r /tmp/$DUMP_APP.zip /tmp/$DUMP_APP.dump
 sz /tmp/$DUMP_APP.zip
 ```
@@ -133,7 +133,6 @@ kubectl patch node nodeIP -p '{"spec":{"unschedulable":true}}'
 
 将k8s node变为可用状态
 kubectl patch node nodeIP -p '{"spec":{"unschedulable":false}}'
-
 ```
 
 ## 不常用操作
@@ -160,6 +159,10 @@ kubectl -n belle-logistics-uat get nodes -o jsonpath='{.items[*].status.addresse
 # 快速创建一个dns查询pod
 kubectl run dnsutils --image=tutum/dnsutils --generator=run-pod/v1 --command -- sleep infinity 
 kubectl exec dnsutils -- nslookup oms-web.belle-petrel-uat
+
+# 批量删除 Evicted Pods
+/usr/bin/kubectl -n kube-system get pods | grep Evicted | awk '{print$1}' | xargs kubectl -n kube-system delete pod
+/usr/bin/kubectl -n default get pods | grep Evicted | awk '{print$1}' | xargs kubectl -n default delete pod
 ```
 
 ## 参考资料

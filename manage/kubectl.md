@@ -45,11 +45,11 @@ kubectl top node
 kubectl top node -l k8s.wonhigh.cn/namespace=wonhigh-petrel-dev
 
 # 禁止节点调度
-kubectl cordon 10.244.3.111
+kubectl cordon 10.250.43.106
 # 驱逐节点 pod
-kubectl drain 10.244.3.111 --ignore-daemonsets --delete-local-data
+kubectl drain 10.250.43.106 --ignore-daemonsets --delete-local-data
 # 强制驱逐节点 pod
-kubectl drain 10.244.3.111 --ignore-daemonsets --delete-local-data --force
+kubectl drain 10.250.43.106 --ignore-daemonsets --delete-local-data --force
 
 systemctl stop kubelet
 systemctl stop docker
@@ -60,7 +60,7 @@ systemctl stop docker
 docker rm `docker ps -a | grep Exited | awk '{print $1}'` 
 
 # 恢复节点调度
-kubectl uncordon 10.244.3.111
+kubectl uncordon 10.250.43.106
 
 # 使用 busybox 容器测试集群，比如网络、dns 等是否正常
 kubectl run -it --rm busybox2 --image=busybox /bin/sh
@@ -89,6 +89,9 @@ kubectl get pod --all-namespaces -o=wide | grep -v prometheus-k8s | grep -v NAME
 kubectl get pod --all-namespaces -o=wide | grep 0/ | awk '{if($5>6)print("kubectl -n "$1" delete pod "$2)}'
 # 获取最近部署的 pod（分钟级）
 kubectl get pod --all-namespaces -o=wide | awk '{if($6~"m")print($0)}'
+
+# 强制重启 pod
+kubectl -n belle-petrel-prod get pod wms-e-all-api-6c447ddcf6-7lwx9 -o=yaml | kubectl replace --force -f -
 
 # 停止容器服务
 systemctl stop kubelet && systemctl stop docker && systemctl status docker

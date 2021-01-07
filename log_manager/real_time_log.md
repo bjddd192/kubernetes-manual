@@ -72,7 +72,7 @@ else
                 echo "发现一个 Running 的POD，即将输出日志..."
                 namespace=$(echo "$result" | awk '{print $2}')
                 podname=$(echo "$result" | awk '{print $3}')
-                sudo /root/local/bin/kubectl logs -f --tail 100 $podname  -n $namespace
+                sudo /root/local/bin/kubectl logs -f --tail 1000 $podname  -n $namespace
         else
                 # 如果是echo $result，输出结果为一行，没有换行符
                 # 如果是echo "$result"，输出结果为多行，有换行符
@@ -82,7 +82,7 @@ else
                 namespace=$(echo "$result" | grep $val | awk '{print $2}')
                 if [ -n "$namespace" ]
                 then
-                        sudo /root/local/bin/kubectl logs -f --tail 100 $podname  -n $namespace
+                        sudo /root/local/bin/kubectl logs -f --tail 1000 $podname  -n $namespace
                 else
                         echo "未发现 Running 的POD，请检查"
                 fi

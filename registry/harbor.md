@@ -31,13 +31,14 @@ Harbor 是一个用于存储和分发 Docker 镜像的企业级 Registry 服务�
 
 ```sh
 cd /tmp
-wget http://10.0.43.24:8066/harbor-offline-installer-v1.6.1.tgz
-tar zxvf harbor-offline-installer-v1.6.1.tgz 
-cd harbor
-# 修改配置
-# 启动 harbor
+wget http://10.0.43.24:8066/harbor/harbor-offline-installer-v1.7.5.tgz
+tar zxvf harbor-offline-installer-v1.7.5.tgz
+mv /tmp/harbor /data/
+cd /data/harbor
+# 修改配置： harbor.cfg
+# 安装 harbor
 sh /data/harbor/install.sh --with-clair --with-chartmuseum
-
+# 启动 harbor
 docker-compose -f ./docker-compose.yml -f ./docker-compose.clair.yml -f ./docker-compose.chartmuseum.yml down -v
 docker-compose -f ./docker-compose.yml -f ./docker-compose.clair.yml -f ./docker-compose.chartmuseum.yml up -d
 docker-compose -f ./docker-compose.yml -f ./docker-compose.clair.yml -f ./docker-compose.chartmuseum.yml up -d registry-web
@@ -118,6 +119,9 @@ A：需要处理 docker-compose.yml 文件，增加对 jobservice 服务的 extr
 
 Q：点击镜像删除后，大小变成0，怎么也删不掉
 A：[Strange behaviour when deleting an repo after GC](https://github.com/goharbor/harbor/issues/5078)
+
+[harbor 无法删除/停止 任务规则：“have pending/running/retrying status”](https://blog.csdn.net/qq_36801585/article/details/106985696)
+[处理办法](https://github.com/goharbor/harbor/issues/7057)
 
 ## 升级指南
 

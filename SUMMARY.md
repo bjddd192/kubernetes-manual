@@ -19,6 +19,8 @@
         * [ansible 方式](install/ansible.md)
         * [rancher](install/rancher.md)
         * [minikube](install/minikube.md)
+        * [kind](install/kind.md)
+        * [OpenShift](install/OpenShift.md)
         * 界面方式(期待中)
     * 集群管理
         * [kubectl](manage/kubectl.md)

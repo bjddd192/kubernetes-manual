@@ -34,6 +34,12 @@ Kubernetes 作为容器集群管理工具，于 2015 年 7 月 22 日迭代到 v
 
 [kubernetes认证授权机制](https://www.jianshu.com/p/bb973ab1029b)
 
+[整天谈容器，你知道两大容器管理平台Kubernetes与OpenShift有什么区别？](https://cloud.tencent.com/developer/article/1559005?from=article.detail.1523234)
+
+[OpenShift和Kubernetes的10个最重要的区别](https://blog.csdn.net/NewTyun/article/details/104548697)
+
+[黄忠德的博客 istio](https://huangzhongde.cn/istio/Chapter1.html)
+
 ## 参考资料
 
 [服务网格实践手册](https://jimmysong.io/istio-handbook/)

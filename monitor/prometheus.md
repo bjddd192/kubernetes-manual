@@ -63,3 +63,7 @@ kubectl apply -f .
 [报警神器 AlertManager 的使用](https://mp.weixin.qq.com/s/ouycoQ5-opB6UA1nZuBV6w)
 
 [如何更有效地利用和监测Kubernetes资源？](https://mp.weixin.qq.com/s/bZynrEdetHAeOLentIYthg)
+
+### 视频教程
+
+[Prometheus 与 Grafana 在 Kubernetes 上的结合使用](https://www.bilibili.com/video/BV1oz4y1S7YH)

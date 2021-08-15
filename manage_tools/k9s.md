@@ -6,7 +6,17 @@ K9s 会以特定时间间隔（默认为2秒）监控Kubernetes资源，并允�
 
 [derailed/k9s](https://github.com/derailed/k9s)
 
-[官方视频演示](https://www.youtube.com/watch?v=bxKfqumjW4I)
+[K9s documentation](https://k9scli.io/)
+
+[官方视频演示](https://asciinema.org/a/305944)
+
+### 安装
+
+#### mac
+
+```sh
+brew install derailed/k9s/k9s
+```
 
 ### 常用命令
 
@@ -14,11 +24,8 @@ K9s 会以特定时间间隔（默认为2秒）监控Kubernetes资源，并允�
 
 ```
 
-### 使用体会
-
-目前因为没有 release 版本，等出来 release 版本后再来体会。
-
 ### 参考资料
 
-[Kubernetes 集群管理工具 K9s](https://cloud.tencent.com/developer/article/1458891)
+[k9s加速k8s集群管理](https://www.escapelife.site/posts/d91f0590.html)
 
+[巧用 K9s 来加速 Kubernetes 多集群的管理](https://blog.csdn.net/easylife206/article/details/110944128)

@@ -252,6 +252,19 @@ export https_proxy=""
 kubectl apply -f deploy.yaml 
 ```
 
+### 自定义api参数
+
+```sh
+docker exec -it kind-control-plane bash
+apt-get update
+apt-get install -y vim
+vi /etc/kubernetes/manifests/kube-apiserver.yaml
+# 增加参数，调整端口范围
+# - --service-node-port-range=20000-50000
+```
+
+[kubeadm clusterconfiguration apiServer.extraArgs overwrite issue](https://github.com/kubernetes-sigs/kind/issues/1839)
+
 ### 参考资料
 
 [比Minikube更快，使用Kind快速创建K8S学习环境](https://www.cnblogs.com/ants/p/13217451.html)
@@ -267,3 +280,5 @@ kubectl apply -f deploy.yaml
 [Configure Image Registry](https://github.com/containerd/cri/blob/master/docs/registry.md)
 
 [Containerd cannot pull image from insecure registry](https://github.com/containerd/containerd/issues/3847)
+
+[自定义 DNS 服务](https://kubernetes.io/zh/docs/tasks/administer-cluster/dns-custom-nameservers/)

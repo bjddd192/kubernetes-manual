@@ -53,3 +53,11 @@ Kubernetes 作为容器集群管理工具，于 2015 年 7 月 22 日迭代到 v
 [K8S 最佳实践：正常终止](https://yq.aliyun.com/articles/679296)
 
 [Kubernetes 中如何保证优雅地停止 Pod](https://www.jianshu.com/p/ec379fe9c58c)
+
+[k8s查看多个Pod 的日志](https://blog.csdn.net/zgliang88/article/details/116756731?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~aggregatepage~first_rank_ecpm_v1~rank_aggregation-1-116756731.pc_agg_rank_aggregation&utm_term=k8s+%E5%90%8C%E6%97%B6%E6%9F%A5%E7%9C%8B%E5%A4%9A%E4%B8%AApod%E6%97%A5%E5%BF%97&spm=1000.2123.3001.4430)
+
+[Kubernetes 网络排错利器之kubectl-debug](https://juejin.cn/post/6907597227938873351)
+
+[优雅的在K8S中Debug容器和主机](https://segmentfault.com/a/1190000040271491?sort=newest)
+
+[kubernetes 实用技巧: 使用 ksniff 抓包](https://cloud.tencent.com/developer/article/1824635)

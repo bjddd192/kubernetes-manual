@@ -36,7 +36,7 @@ mv /Users/yanglei/Downloads/kubectl /usr/local/bin/kubectl
 kubectl label nodes 10.0.43.33 k8s.wonhigh.cn/namespace=bst-petrel-st --overwrite
 kubectl label nodes 10.0.43.9  k8s.wonhigh.cn/namespace=bst-petrel-st --overwrite
 
-## 常用操作
+### 常用操作
 
 ```sh
 # 查看节点资源耗用情况
@@ -45,11 +45,11 @@ kubectl top node
 kubectl top node -l k8s.wonhigh.cn/namespace=wonhigh-petrel-dev
 
 # 禁止节点调度
-kubectl cordon 10.250.15.194
+kubectl cordon 10.250.11.167
 # 驱逐节点 pod
-kubectl drain 10.250.15.194 --ignore-daemonsets --delete-local-data
+kubectl drain 10.250.11.167 --ignore-daemonsets --delete-local-data
 # 强制驱逐节点 pod
-kubectl drain 10.250.15.194 --ignore-daemonsets --delete-local-data --force
+kubectl drain 10.250.11.167 --ignore-daemonsets --delete-local-data --force
 
 systemctl stop kubelet
 systemctl stop docker
@@ -60,7 +60,7 @@ systemctl stop docker
 docker rm `docker ps -a | grep Exited | awk '{print $1}'` 
 
 # 恢复节点调度
-kubectl uncordon 10.250.15.194
+kubectl uncordon 10.250.11.167
 
 # 使用 busybox 容器测试集群，比如网络、dns 等是否正常
 kubectl run -it --rm busybox2 --image=busybox /bin/sh
@@ -92,6 +92,10 @@ kubectl get pod --all-namespaces -o=wide | awk '{if($6~"m")print($0)}'
 
 # 强制重启 pod
 kubectl -n belle-petrel-prod get pod wms-e-all-api-6c447ddcf6-7lwx9 -o=yaml | kubectl replace --force -f -
+
+# 重启 ns 下所有 pod
+kubectl get pod -n belle-scm-press -o=wide | grep -v prometheus-k8s | grep -v NAMESPACE | awk '{if(1>0)print("kubectl -n belle-scm-press delete pod "$1)}'
+
 
 # 停止容器服务
 systemctl stop kubelet && systemctl stop docker && systemctl status docker
@@ -138,7 +142,31 @@ kubectl patch node nodeIP -p '{"spec":{"unschedulable":true}}'
 kubectl patch node nodeIP -p '{"spec":{"unschedulable":false}}'
 ```
 
-## 不常用操作
+### k8s中pod的容器日志查看命令
+
+如果容器已经崩溃停止，您可以仍然使用 kubectl logs --previous 获取该容器的日志，只不过需要添加参数 --previous。 如果 Pod 中包含多个容器，而您想要看其中某一个容器的日志，那么请在命令的最后增加容器名字作为参数。
+
+```sh
+# 追踪名称空间 nsA 下容器组 pod1 的日志
+kubectl logs -f pod1 -n nsA
+
+# 追踪名称空间 nsA 下容器组 pod1 中容器 container1 的日志
+kubectl logs -f pod1 -c container1 -n nsA
+
+# 查看容器组 nginx 下所有容器的日志
+kubectl logs nginx --all-containers=true
+
+# 查看带有 app=nginx 标签的所有容器组所有容器的日志
+kubectl logs -lapp=nginx --all-containers=true
+
+# 查看容器组 nginx 最近20行日志
+kubectl logs --tail=20 nginx
+
+# 查看容器组 nginx 过去1个小时的日志
+kubectl logs --since=1h nginx
+```
+
+### 不常用操作
 
 ```sh
 # dns 组件检查

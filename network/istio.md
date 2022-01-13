@@ -842,4 +842,127 @@ curl -v -HHost:httpbin.example.com \
 "https://httpbin.example.com:443/status/418"
 ```
 
+#### 29 | 双重保障：为应用设置不同级别的双向TLS
+
+对等认证，对网络要求比较高，只适合服务之间的认证。
+
+```sh
+kubectl create ns testauth
+
+kubectl -n testauth apply -f samples/sleep/sleep.yaml
+
+# 可以访问
+kubectl -n testauth exec -it sleep-557747455f-g9wvf -c sleep -- curl http://httpbin.default:8000/ip
+
+# 给default添加命名空间策略
+# 兼容模式
+kubectl apply -f - <<EOF
+apiVersion: "security.istio.io/v1beta1"
+kind: "PeerAuthentication"
+metadata:
+  name: "default"
+  namespace: "default"
+spec:
+  mtls:
+    mode: PERMISSIVE
+EOF
+
+# 可以访问
+kubectl -n testauth exec -it sleep-557747455f-g9wvf -c sleep -- curl http://httpbin.default:8000/ip
+
+# 严格模式
+kubectl apply -f - <<EOF
+apiVersion: "security.istio.io/v1beta1"
+kind: "PeerAuthentication"
+metadata:
+  name: "default"
+  namespace: "default"
+spec:
+  mtls:
+    mode: STRICT
+EOF
+
+# 不可访问
+kubectl -n testauth exec -it sleep-557747455f-g9wvf -c sleep -- curl http://httpbin.default:8000/ip
+
+# 注入 istio 即可访问，istio 会自动管理证书
+kubectl -n testauth apply -f <(istioctl kube-inject -f samples/sleep/sleep.yaml)
+
+# 可以访问
+kubectl -n testauth exec -it sleep-64cf84c646-zmgdk -c sleep -- curl http://httpbin.default:8000/ip
+```
+
+#### 30 | 授权策略：如何实现JWT身份认证与授权？
+
+```sh
+kubectl create ns testjwt
+
+kubectl -n testjwt apply -f <(istioctl kube-inject -f samples/sleep/sleep.yaml)
+kubectl -n testjwt apply -f <(istioctl kube-inject -f samples/httpbin/httpbin.yaml)
+
+# 测试连通性(因为没有任何规则，可以通，返回200)
+kubectl -n testjwt exec $(kubectl -n testjwt get pod -l app=sleep -o jsonpath={.items..metadata.name}) -c sleep -- curl "http://httpbin.testjwt:8000/ip" -s -o /dev/null -w "%{http_code}\n"
+
+# 创建请求认证
+kubectl apply -f - <<EOF
+apiVersion: "security.istio.io/v1beta1"
+kind: "RequestAuthentication"
+metadata:
+  name: "jwt-example"
+  namespace: testjwt
+spec:
+  selector:
+    matchLabels:
+      app: httpbin
+  jwtRules:
+  - issuer: "testing@secure.istio.io"
+    jwksUri: "https://raw.githubusercontent.com/malphi/geektime-servicemesh/master/c3-19/jwks.json"
+EOF
+
+# 测试连通性(不带token可以正常访问)
+kubectl -n testjwt exec $(kubectl -n testjwt get pod -l app=sleep -o jsonpath={.items..metadata.name}) -c sleep -- curl "http://httpbin.testjwt:8000/headers" -H "Authorization: Bearer invalidToken" -s -o /dev/null -w "%{http_code}\n"
+
+# 测试连通性(带错误token不可以正常访问，报401错误)
+kubectl -n testjwt exec $(kubectl -n testjwt get pod -l app=sleep -o jsonpath={.items..metadata.name}) -c sleep -- curl "http://httpbin.testjwt:8000/headers" -s -o /dev/null -w "%{http_code}\n"
+
+# 创建授权策略
+kubectl apply -f - <<EOF
+apiVersion: security.istio.io/v1beta1
+kind: AuthorizationPolicy
+metadata:
+  name: require-jwt
+  namespace: testjwt
+spec:
+  selector:
+    matchLabels:
+      app: httpbin
+  action: ALLOW
+  rules:
+  - from:
+    - source:
+       requestPrincipals: ["testing@secure.istio.io/testing@secure.istio.io"]
+EOF
+
+# 测试连通性(不带token不可以正常访问，报403错误)
+kubectl -n testjwt exec $(kubectl -n testjwt get pod -l app=sleep -o jsonpath={.items..metadata.name}) -c sleep -- curl "http://httpbin.testjwt:8000/headers" -H "Authorization: Bearer invalidToken" -s -o /dev/null -w "%{http_code}\n"
+
+# 测试连通性(带错误token不可以正常访问，报403错误)
+kubectl -n testjwt exec $(kubectl -n testjwt get pod -l app=sleep -o jsonpath={.items..metadata.name}) -c sleep -- curl "http://httpbin.testjwt:8000/headers" -s -o /dev/null -w "%{http_code}\n"
+
+# 解析token
+TOKEN=$(curl https://raw.githubusercontent.com/malphi/geektime-servicemesh/master/c3-19/demo.jwt -s) && echo $TOKEN | cut -d '.' -f2 - | base64 --decode -
+
+# 测试连通性(带正确token可以正常访问)
+kubectl -n testjwt exec $(kubectl get pod -l app=sleep -n testjwt -o jsonpath={.items..metadata.name}) -c sleep -- curl "http://httpbin.testjwt:8000/headers" -H "Authorization: Bearer $TOKEN" -s -o /dev/null -w "%{http_code}\n"
+
+```
+
+### 卸载
+
+```sh
+# 从集群中完全卸载 Istio
+istioctl x uninstall --purge
+kubectl delete ns istio-system
+```
+
 ### 参考资料

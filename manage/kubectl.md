@@ -45,11 +45,11 @@ kubectl top node
 kubectl top node -l k8s.wonhigh.cn/namespace=wonhigh-petrel-dev
 
 # 禁止节点调度
-kubectl cordon 10.250.11.184
+kubectl cordon 10.250.11.201
 # 驱逐节点 pod
-kubectl drain 10.250.11.184 --ignore-daemonsets --delete-local-data
+kubectl drain 10.250.11.201 --ignore-daemonsets --delete-local-data
 # 强制驱逐节点 pod
-kubectl drain 10.250.11.184 --ignore-daemonsets --delete-local-data --force
+kubectl drain 10.250.11.201 --ignore-daemonsets --delete-local-data --force
 
 systemctl stop kubelet
 systemctl stop docker
@@ -60,7 +60,7 @@ systemctl stop docker
 docker rm `docker ps -a | grep Exited | awk '{print $1}'` 
 
 # 恢复节点调度
-kubectl uncordon 10.250.11.184
+kubectl uncordon 10.250.11.201
 
 # 使用 busybox 容器测试集群，比如网络、dns 等是否正常
 kubectl run -it --rm busybox2 --image=busybox /bin/sh
@@ -115,6 +115,9 @@ exit
 kubectl -n belle-petrel-prod cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
 zip -r /tmp/$DUMP_APP.zip /tmp/$DUMP_APP.dump
 sz /tmp/$DUMP_APP.zip
+
+# 查看java进程
+kubectl -n belle-petrel-prod exec -it  oms-check-api-847c854f6-vsdbs -- ps -ef  | grep java | awk '{print $1}'
 ```
 
 ```sh

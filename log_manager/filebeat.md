@@ -73,3 +73,9 @@ filebeat modules list
 [Elastic 技术栈之 Filebeat](https://www.cnblogs.com/jingmoxukong/p/8185321.html)
 
 [ELK--filebeat详解](https://www.cnblogs.com/kuku0223/p/8316922.html)
+
+[基于helm快速部署k8s日志采集分析系统EFK(Elasticsearch＋FileBeat＋Kibana)](https://blog.csdn.net/qq_28540443/article/details/106428346)
+
+[kubernetes Filebeat+ELK日志收集监控方案](https://cloud.tencent.com/developer/article/1450323)
+
+[EFK（Elasticsearch+Filebeat+Kibana） 收集K8s容器日志](https://www.cnblogs.com/cyleon/p/14407435.html)

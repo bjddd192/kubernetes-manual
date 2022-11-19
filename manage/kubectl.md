@@ -82,6 +82,10 @@ kubectl scale deploy kubernetes-dashboard --replicas=1 -n kube-system
 kubectl scale rc oms-e-api.1.0.1.rc17 --replicas=3 -n belle-petrel-prod
 kubectl -n belle-logistics-prod scale rc logistics-wms-city-yg.2.4.0-sp1.rc1 --replicas=5
 
+# 查看异常状态的 pod
+kubectl get pod --all-namespaces -o=wide | grep -E "0/1|1/2"
+kubectl get pod --all-namespaces -o=wide | grep -v "Running" | grep -v "NAMESPACE"
+
 # 查看 pod 重启次数
 kubectl get pod --all-namespaces -o=wide | grep -v prometheus-k8s | awk '{if($5>0)print($0)}'
 # 生成重启 pod 命令
@@ -89,6 +93,7 @@ kubectl get pod --all-namespaces -o=wide | grep -v prometheus-k8s | grep -v NAME
 kubectl get pod --all-namespaces -o=wide | grep 0/ | awk '{if($5>6)print("kubectl -n "$1" delete pod "$2)}'
 # 获取最近部署的 pod（分钟级）
 kubectl get pod --all-namespaces -o=wide | awk '{if($6~"m")print($0)}'
+kubectl get pod --all-namespaces -o=wide | awk '{if($6~/^[0-9]*[s|m]/)print($0)}'
 
 # 强制重启 pod
 kubectl -n belle-petrel-prod get pod wms-e-all-api-6c447ddcf6-7lwx9 -o=yaml | kubectl replace --force -f -

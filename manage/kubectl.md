@@ -83,7 +83,7 @@ kubectl scale rc oms-e-api.1.0.1.rc17 --replicas=3 -n belle-petrel-prod
 kubectl -n belle-logistics-prod scale rc logistics-wms-city-yg.2.4.0-sp1.rc1 --replicas=5
 
 # 查看异常状态的 pod
-kubectl get pod --all-namespaces -o=wide | grep -E "0/1|1/2"
+kubectl get pod --all-namespaces -o=wide | grep -E "0/1|1/2|0/2"
 kubectl get pod --all-namespaces -o=wide | grep -v "Running" | grep -v "NAMESPACE"
 
 # 查看 pod 重启次数

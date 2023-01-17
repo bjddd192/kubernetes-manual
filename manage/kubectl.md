@@ -120,7 +120,7 @@ exit
 # 压缩
 kubectl -n belle-petrel-prod cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
 zip -r /tmp/$DUMP_APP.zip /tmp/$DUMP_APP.dump
-sz /tmp/$DUMP_APP.zip
+# sz /tmp/$DUMP_APP.zip
 scp /tmp/$DUMP_APP.zip 10.250.15.49:/data/sfds/tmp/
 
 kubectl -n lesoon-dev -c logistics-dop-server-api cp logistics-dop-server-api-v1-864df8ff88-xvtb2:/tmp/app.dump /tmp/dop.dump

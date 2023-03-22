@@ -79,7 +79,7 @@ apk add tcpdump
 
 # 扩容
 kubectl scale deploy kubernetes-dashboard --replicas=1 -n kube-system
-kubectl scale rc oms-e-api.1.0.1.rc17 --replicas=3 -n belle-petrel-prod
+kubectl scale rc oms-e-api.1.0.1.rc17 --replicas=3 -n lesoon-asm-app
 kubectl -n belle-logistics-prod scale rc logistics-wms-city-yg.2.4.0-sp1.rc1 --replicas=5
 
 # 查看异常状态的 pod
@@ -96,7 +96,7 @@ kubectl get pod --all-namespaces -o=wide | awk '{if($6~"m")print($0)}'
 kubectl get pod --all-namespaces -o=wide | awk '{if($6~/^[0-9]*[s|m]/)print($0)}'
 
 # 强制重启 pod
-kubectl -n belle-petrel-prod get pod wms-e-all-api-6c447ddcf6-7lwx9 -o=yaml | kubectl replace --force -f -
+kubectl -n lesoon-asm-app get pod wms-e-all-api-6c447ddcf6-7lwx9 -o=yaml | kubectl replace --force -f -
 
 # 重启 ns 下所有 pod
 kubectl get pod -n belle-scm-press -o=wide | grep -v prometheus-k8s | grep -v NAMESPACE | awk '{if(1>0)print("kubectl -n belle-scm-press delete pod "$1)}'
@@ -108,7 +108,7 @@ systemctl stop kubelet && systemctl stop docker && systemctl status docker
 
 # 导出堆栈脚本
 export DUMP_APP=wms-api-77f565f756-vkfvt
-kubectl -n belle-petrel-prod exec -it $DUMP_APP bash
+kubectl -n lesoon-asm-app exec -it $DUMP_APP bash
 
 # 导出堆栈
 cd /tmp
@@ -118,7 +118,7 @@ jmap -dump:format=b,file=/tmp/app.dump $pid
 exit
 
 # 压缩
-kubectl -n belle-petrel-prod cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
+kubectl -n lesoon-asm-app cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
 zip -r /tmp/$DUMP_APP.zip /tmp/$DUMP_APP.dump
 # sz /tmp/$DUMP_APP.zip
 scp /tmp/$DUMP_APP.zip 10.250.15.49:/data/sfds/tmp/
@@ -126,7 +126,7 @@ scp /tmp/$DUMP_APP.zip 10.250.15.49:/data/sfds/tmp/
 kubectl -n lesoon-dev -c logistics-dop-server-api cp logistics-dop-server-api-v1-864df8ff88-xvtb2:/tmp/app.dump /tmp/dop.dump
 
 # 查看java进程
-kubectl -n belle-petrel-prod exec -it  oms-check-api-847c854f6-vsdbs -- ps -ef  | grep java | awk '{print $1}'
+kubectl -n lesoon-asm-app exec -it  oms-check-api-847c854f6-vsdbs -- ps -ef  | grep java | awk '{print $1}'
 ```
 
 ```sh

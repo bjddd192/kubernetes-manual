@@ -107,8 +107,9 @@ kubectl get pod -n lesoon-dev | grep api | awk '{if(1>0)print("kubectl -n lesoon
 systemctl stop kubelet && systemctl stop docker && systemctl status docker
 
 # 导出堆栈脚本
-export DUMP_APP=wms-api-77f565f756-vkfvt
-kubectl -n lesoon-asm-app exec -it $DUMP_APP bash
+export DUMP_APP=oms-purchase-api-v1-77d5b55747-9d5lm
+# kubectl -n lesoon-asm-app exec -it $DUMP_APP bash
+kubectl -n lesoon-asm-app exec -it $DUMP_APP -c oms-purchase-api bash
 
 # 导出堆栈
 cd /tmp
@@ -118,12 +119,12 @@ jmap -dump:format=b,file=/tmp/app.dump $pid
 exit
 
 # 压缩
-kubectl -n lesoon-asm-app cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
+# kubectl -n lesoon-asm-app cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
+kubectl -n lesoon-asm-app -c oms-purchase-api cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
 zip -r /tmp/$DUMP_APP.zip /tmp/$DUMP_APP.dump
 # sz /tmp/$DUMP_APP.zip
+# 00y6ziL+BTzpNg4Y
 scp /tmp/$DUMP_APP.zip 10.250.15.49:/data/sfds/tmp/
-
-kubectl -n lesoon-dev -c logistics-dop-server-api cp logistics-dop-server-api-v1-864df8ff88-xvtb2:/tmp/app.dump /tmp/dop.dump
 
 # 查看java进程
 kubectl -n lesoon-asm-app exec -it  oms-check-api-847c854f6-vsdbs -- ps -ef  | grep java | awk '{print $1}'

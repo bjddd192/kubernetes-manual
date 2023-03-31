@@ -966,3 +966,5 @@ kubectl delete ns istio-system
 ```
 
 ### 参考资料
+
+[ServerTLSSettings](https://istio.io/latest/docs/reference/config/networking/gateway/#ServerTLSSettings-TLSProtocol)

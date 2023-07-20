@@ -95,6 +95,8 @@ kubectl get pod --all-namespaces -o=wide | grep 0/ | awk '{if($5>6)print("kubect
 kubectl get pod --all-namespaces -o=wide | awk '{if($6~"m")print($0)}'
 kubectl get pod --all-namespaces -o=wide | awk '{if($6~/^[0-9]*[s|m]/)print($0)}'
 
+# 定时清理重启10次以上的pod
+*/5 * * * * /usr/bin/kubectl get pod --all-namespaces -o=wide | grep -E '1/2|0/1|0/2' | grep -v petrel | grep -v register | awk '{if($5>10)print($0)}' | awk '{sub(/-v1.+/,"",$2);print}' | awk '{print$1} {print$2}' | xargs -n 2 bash -c '/usr/bin/kubectl -n $0 delete deployment $1-v1'
 # 强制重启 pod
 kubectl -n lesoon-asm-app get pod wms-e-all-api-6c447ddcf6-7lwx9 -o=yaml | kubectl replace --force -f -
 
@@ -107,7 +109,7 @@ kubectl get pod -n lesoon-dev | grep api | awk '{if(1>0)print("kubectl -n lesoon
 systemctl stop kubelet && systemctl stop docker && systemctl status docker
 
 # 导出堆栈脚本
-export DUMP_APP=oms-purchase-api-v1-77d5b55747-9d5lm
+export DUMP_APP=oms-purchase-api-v1-5cfd5b8bc4-l8vqp
 # kubectl -n lesoon-asm-app exec -it $DUMP_APP bash
 kubectl -n lesoon-asm-app exec -it $DUMP_APP -c oms-purchase-api bash
 

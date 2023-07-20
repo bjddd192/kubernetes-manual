@@ -79,3 +79,18 @@ filebeat modules list
 [kubernetes Filebeat+ELK日志收集监控方案](https://cloud.tencent.com/developer/article/1450323)
 
 [EFK（Elasticsearch+Filebeat+Kibana） 收集K8s容器日志](https://www.cnblogs.com/cyleon/p/14407435.html)
+
+[filebeat如何过滤掉不要的日志，filebeat对json格式日志过滤，filebeat正则过滤日志](https://blog.csdn.net/qq_32352777/article/details/124707681)
+
+[filebeat自定义索引名,filebeat索引模板](https://www.cnblogs.com/gered/p/15386300.html#_label2)
+
+[filebeat收集多类型日志并设置不同的索引](https://blog.csdn.net/weixin_45203131/article/details/122397075)
+
+[filebeat采集基础知识](https://blog.csdn.net/zorsea/article/details/128264636)
+
+[网易基于Filebeat的日志采集服务设计与实践](https://mp.weixin.qq.com/s?__biz=MzU0OTE4MzYzMw==&mid=2247511704&idx=4&sn=2f8d1b1ca6d5051d3e39ff5043ae6091&chksm=fbb12766ccc6ae702a0203380f73d7bc5c8a98ac3414b656eaa6724852e6d32b995866cd1522&scene=27)
+
+[如何让filebeat忽略某些容器日志](https://qa.1r1g.com/sf/ask/3962089491/)
+
+
+[Filter and enhance data with processors](https://www.elastic.co/guide/en/beats/filebeat/7.17/filtering-and-enhancing-data.html#filtering-and-enhancing-data)

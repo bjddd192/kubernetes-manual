@@ -96,7 +96,7 @@ kubectl get pod --all-namespaces -o=wide | awk '{if($6~"m")print($0)}'
 kubectl get pod --all-namespaces -o=wide | awk '{if($6~/^[0-9]*[s|m]/)print($0)}'
 
 # 定时清理重启10次以上的pod
-*/5 * * * * /usr/bin/kubectl get pod --all-namespaces -o=wide | grep -E '1/2|0/1|0/2' | grep -v petrel | grep -v register | awk '{if($5>10)print($0)}' | awk '{sub(/-v1.+/,"",$2);print}' | awk '{print$1} {print$2}' | xargs -n 2 bash -c '/usr/bin/kubectl -n $0 delete deployment $1-v1'
+*/5 * * * * /usr/bin/kubectl get pod --all-namespaces -o=wide | grep -E '1/2|0/1|0/2' | grep -v petrel | grep -v register | awk '{if($5>10)print($0)}' | awk '{sub(/.+/,"",$2);print}' | awk '{print$1} {print$2}' | xargs -n 2 bash -c '/usr/bin/kubectl -n $0 delete deployment $1'
 # 强制重启 pod
 kubectl -n lesoon-asm-app get pod wms-e-all-api-6c447ddcf6-7lwx9 -o=yaml | kubectl replace --force -f -
 
@@ -109,9 +109,9 @@ kubectl get pod -n lesoon-dev | grep api | awk '{if(1>0)print("kubectl -n lesoon
 systemctl stop kubelet && systemctl stop docker && systemctl status docker
 
 # 导出堆栈脚本
-export DUMP_APP=tms-api-v1-5cb9d6c84b-76rfs
+export DUMP_APP=lesoon-sce-tms-ied-api-v1-677f489984-lbxqz
 # kubectl -n lesoon-asm-app exec -it $DUMP_APP bash
-kubectl -n lesoon-asm-app exec -it $DUMP_APP -c tms-api bash
+kubectl -n lesoon-asm-app exec -it $DUMP_APP -c lesoon-sce-tms-ied-api bash
 
 # 导出堆栈
 cd /tmp
@@ -122,11 +122,15 @@ exit
 
 # 压缩
 # kubectl -n lesoon-asm-app cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
-kubectl -n lesoon-asm-app -c tms-api cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
+kubectl -n lesoon-asm-app -c lesoon-sce-tms-ied-api cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
 zip -r /tmp/$DUMP_APP.zip /tmp/$DUMP_APP.dump
 # sz /tmp/$DUMP_APP.zip
 # 00y6ziL+BTzpNg4Y
 scp /tmp/$DUMP_APP.zip 10.250.15.49:/data/sfds/tmp/
+
+# 生成一个堆转储（Heap Dump）文件。堆转储文件包含了 JVM 在某一时刻的内存状态，包括所有的对象及其引用关系。
+# 这个文件可以用来分析内存泄漏、大对象等问题。
+jmap -dump:live,format=b,file=/path/to/heapdump.hprof
 
 # 查看java进程
 kubectl -n lesoon-asm-app exec -it  oms-check-api-847c854f6-vsdbs -- ps -ef  | grep java | awk '{print $1}'

@@ -84,6 +84,7 @@ kubectl -n belle-logistics-prod scale rc logistics-wms-city-yg.2.4.0-sp1.rc1 --r
 
 # 查看异常状态的 pod
 kubectl get pod --all-namespaces -o=wide | grep -E "0/1|1/2|0/2"
+kubectl get pod --all-namespaces -o=wide | grep -v "csi-provisioner" | grep -E "0/1|1/2|0/2"
 kubectl get pod --all-namespaces -o=wide | grep -v "Running" | grep -v "NAMESPACE"
 
 # 查看 pod 重启次数
@@ -109,9 +110,9 @@ kubectl get pod -n lesoon-dev | grep api | awk '{if(1>0)print("kubectl -n lesoon
 systemctl stop kubelet && systemctl stop docker && systemctl status docker
 
 # 导出堆栈脚本
-export DUMP_APP=lesoon-sce-tms-ied-api-v1-677f489984-lbxqz
+export DUMP_APP=los-om-api-v1-b4f7cccbd-xtfmm
 # kubectl -n lesoon-asm-app exec -it $DUMP_APP bash
-kubectl -n lesoon-asm-app exec -it $DUMP_APP -c lesoon-sce-tms-ied-api bash
+kubectl -n lesoon-asm-app exec -it $DUMP_APP -c los-om-api bash
 
 # 导出堆栈
 cd /tmp
@@ -122,7 +123,7 @@ exit
 
 # 压缩
 # kubectl -n lesoon-asm-app cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
-kubectl -n lesoon-asm-app -c lesoon-sce-tms-ied-api cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
+kubectl -n lesoon-asm-app -c los-om-api cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
 zip -r /tmp/$DUMP_APP.zip /tmp/$DUMP_APP.dump
 # sz /tmp/$DUMP_APP.zip
 # 00y6ziL+BTzpNg4Y

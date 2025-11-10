@@ -79,8 +79,8 @@ apk add tcpdump
 
 # 扩容
 kubectl scale deploy kubernetes-dashboard --replicas=1 -n kube-system
-kubectl scale rc oms-e-api.1.0.1.rc17 --replicas=3 -n lesoon-asm-app
-kubectl -n belle-logistics-prod scale rc logistics-wms-city-yg.2.4.0-sp1.rc1 --replicas=5
+kubectl scale rc oms-e-api.1.0.1.rc17 --replicas=3 -n lesoon-asm-app 
+kubectl -n lesoon-asm-app scale rc logistics-wms-city-yg.2.4.0-sp1.rc1 --replicas=5
 
 # 查看异常状态的 pod
 kubectl get pod --all-namespaces -o=wide | grep -E "0/1|1/2|0/2"
@@ -91,7 +91,7 @@ kubectl get pod --all-namespaces -o=wide | grep -v "Running" | grep -v "NAMESPAC
 kubectl get pod --all-namespaces -o=wide | grep -v prometheus-k8s | awk '{if($5>0)print($0)}'
 # 生成重启 pod 命令
 kubectl get pod --all-namespaces -o=wide | grep -v prometheus-k8s | grep -v NAMESPACE | awk '{if($5>0)print("kubectl -n "$1" delete pod "$2)}'
-kubectl get pod --all-namespaces -o=wide | grep 0/ | awk '{if($5>6)print("kubectl -n "$1" delete pod "$2)}'
+kubectl get pod --all-namespaces -o=wide | grep -v prometheus-k8s | grep -v NAMESPACE | awk '{if($5>6)print("kubectl -n "$1" delete pod "$2)}'
 # 获取最近部署的 pod（分钟级）
 kubectl get pod --all-namespaces -o=wide | awk '{if($6~"m")print($0)}'
 kubectl get pod --all-namespaces -o=wide | awk '{if($6~/^[0-9]*[s|m]/)print($0)}'
@@ -99,7 +99,7 @@ kubectl get pod --all-namespaces -o=wide | awk '{if($6~/^[0-9]*[s|m]/)print($0)}
 # 定时清理重启10次以上的pod
 */5 * * * * /usr/bin/kubectl get pod --all-namespaces -o=wide | grep -E '1/2|0/1|0/2' | grep -v petrel | grep -v register | awk '{if($5>10)print($0)}' | awk '{sub(/.+/,"",$2);print}' | awk '{print$1} {print$2}' | xargs -n 2 bash -c '/usr/bin/kubectl -n $0 delete deployment $1'
 # 强制重启 pod
-kubectl -n lesoon-asm-app get pod wms-e-all-api-6c447ddcf6-7lwx9 -o=yaml | kubectl replace --force -f -
+kubectl -n lesoon-asm-app  get pod wms-e-all-api-6c447ddcf6-7lwx9 -o=yaml | kubectl replace --force -f -
 
 # 重启 ns 下所有 pod
 kubectl get pod -n belle-scm-press -o=wide | grep -v prometheus-k8s | grep -v NAMESPACE | awk '{if(1>0)print("kubectl -n belle-scm-press delete pod "$1)}'
@@ -110,9 +110,9 @@ kubectl get pod -n lesoon-dev | grep api | awk '{if(1>0)print("kubectl -n lesoon
 systemctl stop kubelet && systemctl stop docker && systemctl status docker
 
 # 导出堆栈脚本
-export DUMP_APP=los-om-api-v1-b4f7cccbd-xtfmm
-# kubectl -n lesoon-asm-app exec -it $DUMP_APP bash
-kubectl -n lesoon-asm-app exec -it $DUMP_APP -c los-om-api bash
+export DUMP_APP=lesoon-sce-tms-order-api-v1-8674665d85-kjsf2
+# kubectl -n lesoon-asm-app  exec -it $DUMP_APP bash
+kubectl -n lesoon-asm-app  exec -it $DUMP_APP -c lesoon-sce-tms-order-api bash
 
 # 导出堆栈
 cd /tmp
@@ -122,8 +122,8 @@ jmap -dump:format=b,file=/tmp/app.dump $pid
 exit
 
 # 压缩
-# kubectl -n lesoon-asm-app cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
-kubectl -n lesoon-asm-app -c los-om-api cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
+# kubectl -n lesoon-asm-app  cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
+kubectl -n lesoon-asm-app  -c lesoon-sce-tms-order-api cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
 zip -r /tmp/$DUMP_APP.zip /tmp/$DUMP_APP.dump
 # sz /tmp/$DUMP_APP.zip
 # 00y6ziL+BTzpNg4Y
@@ -134,7 +134,7 @@ scp /tmp/$DUMP_APP.zip 10.250.15.49:/data/sfds/tmp/
 jmap -dump:live,format=b,file=/path/to/heapdump.hprof
 
 # 查看java进程
-kubectl -n lesoon-asm-app exec -it  oms-check-api-847c854f6-vsdbs -- ps -ef  | grep java | awk '{print $1}'
+kubectl -n lesoon-asm-app  exec -it  oms-check-api-847c854f6-vsdbs -- ps -ef  | grep java | awk '{print $1}'
 ```
 
 ```sh

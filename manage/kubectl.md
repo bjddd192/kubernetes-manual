@@ -110,9 +110,9 @@ kubectl get pod -n lesoon-dev | grep api | awk '{if(1>0)print("kubectl -n lesoon
 systemctl stop kubelet && systemctl stop docker && systemctl status docker
 
 # 导出堆栈脚本
-export DUMP_APP=lesoon-sce-tms-order-api-v1-8674665d85-kjsf2
+export DUMP_APP=lesoon-sce-wms-e-api-v1-65cddfddb8-kr5sp
 # kubectl -n lesoon-asm-app  exec -it $DUMP_APP bash
-kubectl -n lesoon-asm-app  exec -it $DUMP_APP -c lesoon-sce-tms-order-api bash
+kubectl -n lesoon-asm-app  exec -it $DUMP_APP -c lesoon-sce-wms-e-api bash
 
 # 导出堆栈
 cd /tmp
@@ -123,7 +123,7 @@ exit
 
 # 压缩
 # kubectl -n lesoon-asm-app  cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
-kubectl -n lesoon-asm-app  -c lesoon-sce-tms-order-api cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
+kubectl -n lesoon-asm-app  -c lesoon-sce-wms-e-api cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
 zip -r /tmp/$DUMP_APP.zip /tmp/$DUMP_APP.dump
 # sz /tmp/$DUMP_APP.zip
 # 00y6ziL+BTzpNg4Y

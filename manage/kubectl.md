@@ -110,9 +110,9 @@ kubectl get pod -n lesoon-dev | grep api | awk '{if(1>0)print("kubectl -n lesoon
 systemctl stop kubelet && systemctl stop docker && systemctl status docker
 
 # 导出堆栈脚本
-export DUMP_APP=lesoon-sce-tms-order-api-v1-8674665d85-kjsf2
+export DUMP_APP=lesoon-hris-ehr-api-v1-5b6f484947-jpzdr
 # kubectl -n lesoon-asm-app  exec -it $DUMP_APP bash
-kubectl -n lesoon-asm-app  exec -it $DUMP_APP -c lesoon-sce-tms-order-api bash
+kubectl -n lesoon-asm-app  exec -it $DUMP_APP -c lesoon-hris-ehr-api bash
 
 # 导出堆栈
 cd /tmp
@@ -123,7 +123,7 @@ exit
 
 # 压缩
 # kubectl -n lesoon-asm-app  cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
-kubectl -n lesoon-asm-app  -c lesoon-sce-tms-order-api cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
+kubectl -n lesoon-asm-app  -c lesoon-hris-ehr-api cp $DUMP_APP:/tmp/app.dump /tmp/$DUMP_APP.dump
 zip -r /tmp/$DUMP_APP.zip /tmp/$DUMP_APP.dump
 # sz /tmp/$DUMP_APP.zip
 # 00y6ziL+BTzpNg4Y
@@ -135,6 +135,9 @@ jmap -dump:live,format=b,file=/path/to/heapdump.hprof
 
 # 查看java进程
 kubectl -n lesoon-asm-app  exec -it  oms-check-api-847c854f6-vsdbs -- ps -ef  | grep java | awk '{print $1}'
+
+# 根据ip取应用
+kubectl get pod --all-namespaces -o wide | grep -v csi-provisioner | grep -E '(10.246.96.255 |10.246.96.176 |10.246.97.118 |10.246.96.251 |100.104.72.7 |10.246.96.250 |10.246.97.8 |10.246.97.154 |10.246.99.18 |10.250.15.40 |10.246.97.114 |10.246.97.157 |10.246.99.39 |10.246.97.190 |10.246.98.42 |10.246.96.218 |10.246.96.143 |10.246.98.191 |10.246.97.109 |10.246.1.166 |10.246.96.57 |10.246.96.79 |10.246.98.18 |10.246.97.200 |10.246.98.54 |10.246.99.44 |10.246.99.85 )' | awk '{print substr($2,1,index($2,"-v1")-1)}' | sort -u
 ```
 
 ```sh
